@@ -1,0 +1,70 @@
+baseUrl: https://lighten-mailbox.zici.fr/
+title: "Lighten Mailbox"
+subTitle: " - Alléger vos boîtes mails"
+
+url: 
+    archive: 'https://lighten-mailbox.zici.fr/archive/'
+    
+archive:
+    life: 15  # in Day
+
+delete:
+    relaunch:   # Relance après date de création 
+        - 5
+        - 10
+
+db:
+    dsn: 'mysql:host=localhost;dbname=lightmb'
+    user: 'lightmb'
+    password: '**********'
+
+mailer:
+    host: "mail.exemple.com"
+    port: 587
+    secure: "tls" # ssl or tls or comment for unsecure
+    certverify: false
+    auth: true
+    username: "vous@exemple.com"
+    password : "***********"
+    from: "vous@exemple.com"
+    replyto: "vous@exemple.com"
+    subjectprefix: "[Lighten your mailbox]"
+    msgsignature: "Team of <a href='https://lighten-mailbox.zici.fr'>https://lighten-mailbox.zici.fr</a>"
+
+
+log:
+    path: /var/www/lighten-mailbox.zici.fr/private/lighten.log
+    level: 5
+    # LOG_LEVEL_OFF = 0;
+    # LOG_LEVEL_FATAL = 1;
+    # LOG_LEVEL_ERROR = 2;
+    # LOG_LEVEL_WARNING = 3;
+    # LOG_LEVEL_INFO = 4;
+    # LOG_LEVEL_DEBUG = 5;
+
+dir:
+    absolut: '/var/www/lighten-mailbox.zici.fr/web'
+    preview: 'preview'
+    archive : 'archive'
+    templateTab: templateTab
+
+
+quotaArchive: 5000000000 # en Byte 1000000000 = 1Go
+
+crypt:   # https://www.php.net/manual/fr/function.openssl-encrypt.php
+    method: 'AES-128-CTR'
+    key: 'LesBoitesMailsDoiventMaigrires'
+    iv: 'ck98sle98zy39eft'
+    options: 0
+
+imap_open:
+    n_retries: 3
+
+# For Net_DNS2
+nameservers:
+    - ns1.fdn.org
+    - 8.8.8.8
+    - 208.67.222.222
+
+daemon:
+    sleep: 5

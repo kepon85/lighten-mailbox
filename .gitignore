@@ -1,0 +1,10 @@
+config.yaml
+error
+stats
+preview/*
+archive/*
+.git_dev
+vendor
+composer
+composer.lock
+dev

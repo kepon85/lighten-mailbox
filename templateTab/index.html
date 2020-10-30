@@ -1,0 +1,525 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>lighten Mailbox</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta name="generator" content="Geany" />
+    <!-- Jquery -->
+    <script src="./lib/jquery-3.4.1.min.js"></script>
+    <!-- Jquery UI -->
+    <script src="./lib/jquery-ui.min.js"></script>
+    <link href="./lib/jquery-ui.min.css" rel="stylesheet">
+    <!-- Tabulator -->   
+    <link href="./lib/tabulator.min.css" rel="stylesheet">
+    <script type="text/javascript" src="./lib/tabulator.min.js"></script>
+    <script type="text/javascript" src="./lib/moment.min.js"></script>
+    <!-- load messages -->
+    <script type="text/javascript" src="./messages.js"></script>
+    <style type="text/css">
+    .langues {
+	position: fixed;
+	top: 0px;
+	right: 20px;
+	padding: 6px;
+    }
+    .table-controls-prim {
+	text-align: left;
+	padding: 5px;
+    }
+    .table-controls {
+	text-align: center;
+	padding: 5px;
+    }
+    #by {
+	text-align: center;
+	font-size: 70%;
+    }
+    
+    </style>
+</head>
+
+<body>
+    <div id="mailView" title="Email reader">
+    </div>
+    <script type="text/javascript" >
+	$( function() {
+	    // Resizeable
+	    $( "#mailView" ).resizable();
+	    // Définition de la dialogue
+	    $( "#mailView" ).dialog({
+		autoOpen: false,
+		height: window.innerHeight-100,
+		width: window.innerWidth-200,
+		show: {
+		    effect: "slide",
+		    duration: 1000
+		},
+		hide: {
+		    effect: "fold",
+		    duration: 1000
+		}
+	    });
+	} );
+    </script>
+    
+    <div id="data-id-list">
+	<input id="msgno" class="data-id" type="hidden" value="msgno" name="Id" />
+	<input id="flagged" class="data-id inTable noFilter" type="hidden" value="flagged" name="Flagged" />
+	<input id="answered" class="data-id inTable noFilter" type="hidden" value="answered" name="Answered" />
+	<input id="message_id" class="data-id" type="hidden" value="message_id" name="Message ID" />
+	<input id="senderaddress" class="data-id" type="hidden" value="senderaddress" name="Sender" />
+	<input id="fromaddress" class="data-id inTable" type="hidden" value="fromaddress" name="From" />
+	<input id="toaddress" class="data-id" type="hidden" value="toaddress" name="To" />
+	<input id="ccaddress" class="data-id" type="hidden" value="ccaddress" name="Cc" />
+	<input id="bccaddress" class="data-id" type="hidden" value="bccaddress" name="Bcc" />	
+	<input id="in_reply_to" class="data-id" type="hidden" value="in_reply_to" name="In reply to" />
+	<input id="subject" class="data-id inTable" type="hidden" value="subject" name="Subject" />
+	<input id="date" class="data-id inTable noFilter" type="hidden" value="date" name="Date" />
+	<input id="udate" class="data-id" type="hidden" value="udate" name="Timestamp" />
+	<input id="reply_toaddress" class="data-id" type="hidden" value="reply_toaddress" name="Reply to" />
+	<input id="references" class="data-id" type="hidden" value="references" name="References" />
+	<input id="size" class="data-id inTable" type="hidden" value="size" name="Size" />
+	<input id="imap_folder" class="data-id" type="hidden" value="imap_folder" name="Imap Folder" />
+	<input id="attachments" class="data-id inTable noFilter" type="hidden" value="attachments" name="Attach." />
+	<input id="attachmentsFilename" class="data-id" type="hidden" value="attachmentsFilename" name="Attach. name" />
+    </div>
+
+    <div class="table-controls-prim">
+
+	<label>Folder: </label>
+	<select id="folderSelect">
+	</select>
+
+	<label>Add column: </label>
+	<select id="addColumnSelect">
+	</select>
+	
+	<label>Remove column: </label>
+	<select id="removeColumnSelect">
+	</select>
+
+    </div>
+
+    <div class="table-controls">
+        <span>
+          <label>Filtre: </label>
+          <select id="filter-field">
+          </select>
+        </span>
+
+        <span>
+          <label>Type: </label>
+          <select id="filter-type">
+              <option value="like">like</option>
+              <option value="regex">regex</option>
+              <option value="=">=</option>
+              <option value="<">&lt;</option>
+              <option value="<=">&lt;=</option>
+              <option value=">">&gt;</option>
+              <option value=">=">&gt;=</option>
+              <option value="!=">!=</option>
+          </select>
+        </span>
+
+	<span><label>Value: </label> <input id="filter-value" type="text" placeholder="value to filter"></span>
+
+	<button id="filter-clear">Clear Filter</button>
+
+	<span>
+	    <label>Store: </label>
+	    <select id="sort-field">
+	      <option value="subject" selected="">subject</option>
+	      <option value="toaddress">toaddress</option>
+	    </select>
+	</span>
+
+	<span>
+	  <label>Direction:</label>
+	  <select id="sort-direction">
+	      <option value="asc" selected="">asc</option>
+	      <option value="desc">desc</option>
+	  </select>
+	</span>
+
+    </div>
+
+    <div class="langues">
+	<input id="lang-french" class="lang" value="Français" type="button" />
+	<input id="lang-default" class="lang" value="English" type="button" />
+    </div>
+    
+    <div id="tableArchive"></div>
+
+    <div id="log">	</div>
+
+    <script type="text/javascript" >
+
+	// Générer le formulaire "addColumn"
+	function refreshTableControls() {
+	    $('#addColumnSelect').empty();
+	    $('#addColumnSelect').append(new Option('', '')); 
+	    $('#removeColumnSelect').empty();
+	    $('#removeColumnSelect').append(new Option('', '')); 
+	    $('#sort-field').empty();
+	    $('#sort-field').append(new Option('', '')); 
+	    $('#filter-field').empty();
+	    $("#data-id-list").children().each(function(){
+		var kid = $(this);
+		if (! kid.hasClass( "inTable" )) {
+			$('#addColumnSelect').append(new Option(kid.attr('name'), kid.attr('value'))); 
+		}
+		// Si cet élément est indiqué comme étant dans la table
+		if (kid.hasClass( "inTable" )) {
+			// On donna la possibilité de trier
+			$('#sort-field').append(new Option(kid.attr('name'), kid.attr('value'))); 
+			// On l'ajoute dans la colonne "à supprimer"
+			$('#removeColumnSelect').append(new Option(kid.attr('name'), kid.attr('value'))); 
+			// S'il n'a pas été précisé que cet élément ne devait pas être filtré
+			if (! $('#'+kid.attr('value')).hasClass( "noFilter" )) {
+				$('#filter-field').append(new Option(kid.attr('name'), kid.attr('value'))); 
+			}
+		}
+	    });
+	}
+	refreshTableControls();
+
+	function tableAddColumn(value, name) {
+		switch (value) {
+			case 'msgno':
+			case 'size':
+			  table.addColumn({title:name, field:value, sorter:"number", align:"center", headerFilter:"number", headerContext:function(e, column){ column.delete(); $('#flagged').removeClass('inTable'); refreshTableControls(); }}, false);
+			break;
+			case 'udate':
+			  table.addColumn({title:name, field:value, align:"center", formatter:"datetime", formatterParams:{
+				  inputFormat:"X",
+				  outputFormat:"DD/MM/YY HH:m",
+				  invalidPlaceholder:"(invalid date)",
+			  }, headerContext:function(e, column){ column.delete(); $('#flagged').removeClass('inTable'); refreshTableControls(); }}, false);
+			break;
+			case 'date':
+			  table.addColumn({title:name, field:value, align:"center", headerFilter:dateFilterEditor, headerFilterFunc:dateFilterFunction, headerContext:function(e, column){ column.delete(); $('#flagged').removeClass('inTable'); refreshTableControls(); }}, false);
+			break;
+			case 'answered':
+			case 'flagged':
+			//case 'attachments':
+			  table.addColumn({title:name, field:value, align:"center", headerContext:function(e, column){ column.delete(); $('#flagged').removeClass('inTable'); refreshTableControls(); }, formatter:printIcon, headerFilter:"tickCross", headerFilterParams:{"tristate":true},headerFilterEmptyCheck:function(value){return value === null}}, false);
+			break;
+			case 'subject':
+			  table.addColumn({title:name, field:value, width: 400, sorter:"string", headerFilter:"input", headerContext:function(e, column){ column.delete(); $('#flagged').removeClass('inTable'); refreshTableControls(); }, responsive:2}, false);
+			case 'fromaddress':
+			  table.addColumn({title:name, field:value, width: 400, sorter:"string", headerFilter:"input", headerContext:function(e, column){ column.delete(); $('#flagged').removeClass('inTable'); refreshTableControls(); }}, false);
+			break;
+			default:
+			  table.addColumn({title:name, field:value, sorter:"string", headerFilter:"input", headerContext:function(e, column){ column.delete(); $('#flagged').removeClass('inTable'); refreshTableControls(); }}, false);
+		}
+	}
+
+	$('#addColumnSelect').on('change',function(){
+		var optionSelected = $("option:selected", this);
+		tableAddColumn(optionSelected.val(), optionSelected.text());
+		$('#'+optionSelected.val()).addClass('inTable');
+		refreshTableControls();
+	});
+
+	$('#removeColumnSelect').on('change',function(){
+		var optionSelected = $("option:selected", this);
+		table.deleteColumn(optionSelected.val());
+		$('#'+optionSelected.val()).removeClass('inTable');
+		refreshTableControls();
+	});
+
+	$('#folderSelect').on('change',function(){
+		var optionSelected = $("option:selected", this);
+		if (optionSelected.val() == 'All') {
+			table.setFilter("imap_folder", "regex", ".");
+		} else {
+			table.setFilter("imap_folder", "=", optionSelected.val());
+		}
+	});
+
+
+
+	//Custom filter example
+	function customFilter(data){
+	    return data.car && data.rating < 3;
+	}
+
+	//Trigger setFilter function with correct parameters
+	function updateFilter(){
+
+	    var filter = $("#filter-field").val() == "function" ? customFilter : $("#filter-field").val();
+
+	    if($("#filter-field").val() == "function" ){
+		$("#filter-type").prop("disabled", true);
+		$("#filter-value").prop("disabled", true);
+	    }else{
+		$("#filter-type").prop("disabled", false);
+		$("#filter-value").prop("disabled", false);
+	    }
+
+	    table.setFilter(
+			filter, $("#filter-type").val(), $("#filter-value").val()
+		);
+	}
+
+	//Update filters on value change
+	$("#filter-field, #filter-type").change(updateFilter);
+	$("#filter-value").keyup(updateFilter);
+
+	//Clear filters on "Clear Filters" button click
+	$("#filter-clear").click(function(){
+		$("#filter-field").val("");
+		$("#filter-type").val("like");
+		$("#filter-value").val("");
+
+		table.clearFilter();
+	});
+
+	var printIcon = function(cell, formatterParams, onRendered){ //plain text value
+		if (cell['_cell']['value'] == true) {
+			return '<img src="lib/'+cell['_cell']['column']['field']+'.svg" width="15" />';
+		} else {
+			return '';
+		}
+	};
+
+	// Date filter :
+	// https://github.com/olifolkerd/tabulator/issues/1011
+	//custom header filter
+	var dateFilterEditor = function(cell, onRendered, success, cancel, editorParams){
+
+		var container = $("<span></span>")
+		//create and style input
+		var start = $("<input type='date' placeholder='Start'/>");
+		var end = $("<input type='date' placeholder='End'/>");
+
+		container.append(start).append(end);
+
+		var inputs = $("input", container);
+
+
+		inputs.css({
+		  "padding":"4px",
+		  "width":"50%",
+		  "box-sizing":"border-box",
+		})
+		.val(cell.getValue());
+
+		function buildDateString(){
+		  return {
+			  start:start.val(),
+			  end:end.val(),
+		  };
+		}
+
+		//submit new value on blur
+		inputs.on("change blur", function(e){
+		  success(buildDateString());
+		});
+
+		//submit new value on enter
+		inputs.on("keydown", function(e){
+		  if(e.keyCode == 13){
+			  success(buildDateString());
+		  }
+
+		  if(e.keyCode == 27){
+			  cancel();
+		  }
+		});
+
+		return container[0];
+	}
+	//custom filter function
+	function dateFilterFunction(headerValue, rowValue, rowData, filterParams){
+		//headerValue - the value of the header filter element
+		//rowValue - the value of the column in this row
+		//rowData - the data for the row being filtered
+		//filterParams - params object passed to the headerFilterFuncParams property
+
+		var format = filterParams.format || "ddd, DD MMM YYYY HH:mm:ss ZZ";
+		var start = moment(headerValue.start);
+		var end = moment(headerValue.end);
+		var value = moment(rowValue, format)
+		if(rowValue){
+			if(start.isValid()){
+				if(end.isValid()){
+					return value >= start && value <= end;
+				}else{
+				console.log(value >= start);
+					return value >= start;
+				}
+			}else{
+				if(end.isValid()){
+					return value <= end;
+				}
+			}
+		}
+
+		return false; //must return a boolean, true if it passes the filter.
+	}
+
+	var printLink = function(cell, formatterParams, onRendered){
+		var returnData = '';
+		if (cell['_cell']['row']['data']['formatText'] == true) {
+			returnData = returnData + ' <a class="openMailView"  href="./'+cell['_cell']['row']['data']['imap_folder']+'/'+cell['_cell']['row']['data']['filename']+'.txt" target="_blank"><img src="lib/txt.svg" width="15" /></a>';
+		} 
+		if (cell['_cell']['row']['data']['formatHtml'] == true) {
+			returnData = returnData +  ' <a class="openMailView" href="./'+cell['_cell']['row']['data']['imap_folder']+'/'+cell['_cell']['row']['data']['filename']+'.html" target="_blank"><img src="lib/html.svg" width="15" /></a>';
+		} 
+		if (cell['_cell']['row']['data']['formatEml'] == true) {
+			returnData = returnData + ' <a class="openMailView" title="Format : eml" href="./'+cell['_cell']['row']['data']['imap_folder']+'/'+cell['_cell']['row']['data']['filename']+'.eml" target="_blank"><img src="lib/eml.svg" width="15" /></a>';
+		} 
+		if (cell['_cell']['row']['data']['attachments'] == true) {
+			returnData = returnData + ' <a class="openMailView" title="PJ" href="./'+cell['_cell']['row']['data']['imap_folder']+'/'+cell['_cell']['row']['data']['filename']+'" target="_blank"><img src="lib/attachments.svg" width="15" /></a>';
+		} 
+		return returnData;
+	};
+
+	//define table
+	var table = new Tabulator("#tableArchive", {
+		data:messages_json,
+		height:"100%",
+		layout:"fitDataFill",
+		responsiveLayout:"collapse",    
+		movableColumns: true,
+		columns:[
+		    {formatter:"responsiveCollapse", width:30, minWidth:30, align:"center", resizable:false, headerSort:false},
+		    //{title:"Id", field:"msgno", sorter:"number",  headerFilter:"number", responsive:0},
+		    //~ {title:"Answered", field:"answered", align:"center", headerContext:function(e, column){ column.delete(); $('#answered').removeClass('inTable'); refreshTableControls(); }, headerFilter:"tickCross", headerFilterParams:{"tristate":true},headerFilterEmptyCheck:function(value){return value === null}, formatter:printIcon},
+		    //~ {title:"Flagged", field:"flagged", align:"center", headerContext:function(e, column){ column.delete(); $('#flagged').removeClass('inTable'); refreshTableControls(); }, headerFilter:"tickCross", headerFilterParams:{"tristate":true},headerFilterEmptyCheck:function(value){return value === null}, formatter:printIcon},
+		    //{title:"Sender", field:"senderaddress", sorter:"string", headerFilter:"input", headerContext:function(e, column){ column.delete(); $('#flagged').removeClass('inTable'); refreshTableControls(); } },
+		    //~ {title:"From", field:"fromaddress", sorter:"string", headerFilter:"input", headerContext:function(e, column){ column.delete(); $('#fromaddress').removeClass('inTable'); refreshTableControls(); }},
+		    //{title:"To", field:"toaddress", sorter:"string", formatter:"textarea", headerFilter:"input", responsive:2},
+		    //~ {title:"Subject", field:"subject", sorter:"string", headerFilter:"input", responsive:2, headerContext:function(e, column){ column.delete(); $('#subject').removeClass('inTable'); refreshTableControls(); }},
+		    //~ {title:"Udate", field:"udate", sorter:"datetime", align:"center", headerFilter:true, formatter:"datetime", formatterParams:{
+			//~ inputFormat:"X",
+			//~ outputFormat:"DD/MM/YY HH:m",
+			//~ invalidPlaceholder:"(invalid date)",
+			//~ }, headerContext:function(e, column){ column.delete(); $('#flagged').removeClass('inTable'); refreshTableControls(); }},
+		    //~ {title:"date", field:"date", sorter:"date", align:"center", headerContext:function(e, column){ column.delete(); $('#date').removeClass('inTable'); refreshTableControls(); },
+			//~ headerFilter:dateFilterEditor, headerFilterFunc:dateFilterFunction},
+			//~ {title:"Size", field:"size", sorter:"number", headerContext:function(e, column){ column.delete(); $('#size').removeClass('inTable'); refreshTableControls(); }},
+			{title:"View", field:"filename", align:"center", formatter:printLink},
+		    //~ {title:"Atta.", field:"attachments", align:"center", headerContext:function(e, column){ column.delete(); $('#attachments').removeClass('inTable'); refreshTableControls(); }, formatter:"tickCross", headerFilter:"tickCross", headerFilterParams:{"tristate":true},headerFilterEmptyCheck:function(value){return value === null}},
+		    //{title:"attachmentsFilename", field:"attachmentsFilename", formatter:printLinkAttachments},
+		    
+		],
+		pagination:"local", //enable local pagination.
+		paginationSize:30, // this option can take any positive integer value (default = 10)
+		// Auto detect langue
+		locale:true, 
+		langs:{
+		    "fr":{ //French language definition
+			    "columns":{
+				    "message_id":"Message ID",
+				    "senderaddress":"Expéditeur",
+				    "fromaddress":"De",
+				    "toaddress":"Pour",
+				    "ccaddress":"Cc",
+				    "bccaddress":"Cci",
+				    "reply_toaddress":"Répondre à l'adresse",
+				    "references":"Références",
+				    "subject":"Sujet",
+				    "size":"Taille",
+				    "flagged":"Suivi",
+				    "answered":"Rép.",
+				    "Lien":"Link",
+				    "imap_folder":"Dossier Imap",
+				    "attachments":"PJ",
+				    "attachmentsFilename":"PJ nom",
+			    },
+			    "pagination":{
+				    "first":"Premier",
+				    "first_title":"Première Page",
+				    "last":"Dernier",
+				    "last_title":"Dernière Page",
+				    "prev":"Précédent",
+				    "prev_title":"Page Précédente",
+				    "next":"Suivant",
+				    "next_title":"Page Suivante",
+			    },
+		    },
+		},
+	});
+
+	// Init colums
+	$("#data-id-list").children().each(function(){
+		// lorsqu'on passe à cet enfant, on le définit par la variable kid
+		var kid = $(this);
+		if (kid.hasClass( "inTable" )) {
+			tableAddColumn(kid.attr('value'), kid.attr('name')) 
+		}
+	});
+
+	function openMailViewer(thisHref) {
+	    // vide
+	    $( "#mailView" ).empty();
+	    // modifie le titre
+	    $( "#mailView" ).prop("title", thisHref);
+	    // Appel de la fonction
+	    $.ajax({
+		    url: thisHref,
+		    type: "GET",
+		    dataType: "html",
+		    success: function (globalData) {
+			var patt = /txt$/g;
+			var res = patt.test(thisHref); 
+			if (res) {
+				// Si txt : 
+				$( "#mailView" ).append(globalData.replace(/\n/g, "<br />"));
+			} else {
+				$( "#mailView" ).append(globalData);
+			}
+			$( "#mailView" ).dialog( "open" );
+			$( ".header" ).hide();
+		    },
+		    error: function (xhr, status) {
+			alert('Error load ' + thisHref + ' : ' + status);
+		    }
+	    });
+	    return false;
+	}
+
+	//set locale to French
+	$("#lang-french").click(function(){
+	    table.setLocale("fr");
+	});
+
+	//set default locale
+	$("#lang-default").click(function(){
+	    table.setLocale("");
+	});
+
+	$('#sort-field').on('change',function(){
+		table.setSort($("#sort-field").val(), $("#sort-direction").val());
+	});
+	$('#sort-direction').on('change',function(){
+		table.setSort($("#sort-field").val(), $("#sort-direction").val());
+	});
+
+	// Info bulles
+	$( document ).tooltip();
+	
+	// Liste folder
+	$('#folderSelect').append(new Option('All', 'All')); 
+	imap_folder=[]
+	for (var i = 0; i < messages_json.length; i++) {
+	    if (imap_folder.includes(messages_json[i]['imap_folder']) == false) {
+		imap_folder.push(messages_json[i]['imap_folder']);
+		if (messages_json[i]['imap_folder'] == 'INBOX') {
+		    $('#folderSelect').append(new Option(messages_json[i]['imap_folder'], messages_json[i]['imap_folder'], true, true)); 
+			table.setFilter("imap_folder", "=", "INBOX");
+		} else {
+		    $('#folderSelect').append(new Option(messages_json[i]['imap_folder'], messages_json[i]['imap_folder'])); 
+		}
+		//console.log("On l'ajoute : " +messages_json[i]['imap_folder']);
+	    }
+	}
+	
+    </script>
+    <p id="by">By <a href="http://david.mercereau.info">David Mercereau</a> - <a href="https://lighten-mailbox.zici.fr/">Lighten Mailbox Project</a> - <a href="https://en.wikipedia.org/wiki/Beerware">Licence Beerware</a></p>
+</body>
+
+</html>
