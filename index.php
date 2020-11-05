@@ -355,7 +355,7 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
                             </div>
                             <div class="f1-buttons">
                                 <input class="f1-cgu" type="checkbox" name="f1-cgu" id="f1-cgu">
-                                <label for="f1-cgu"><a href="./cgu.html" target="_blank"><?= _('I accept the general terms of use') ?></a></label>
+                                <label for="f1-cgu"><?= _('I accept the general terms of use') ?> : <a href="./cgu.html" target="_blank">CGU</a></label>
                                 <button type="button" class="btn btn-next"><?= _('Next') ?></button>
                             </div>
                         </fieldset>
