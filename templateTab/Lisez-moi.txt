@@ -1,0 +1,6 @@
+Ouvrez le fichier "index.html" avec un navigateur internet (Mozilla Firefox  par exemple) 
+Ce fichier contient un tableau dynamique avec les méta données (sujet, date, from...) qui vous permettra de retrouver un message.
+
+ * Le dossier "lib" est utilie pour le fonctionnement de index.html
+ * Les fichiers messages.json et messages.js contiennent mes méta données (format json) ils sont aussi utile pour le fonctionnement de index.html
+ * Ensuite il y a un dossier par dossier IMAP contenant vos messages dans le format souhaité

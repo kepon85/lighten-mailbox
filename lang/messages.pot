@@ -1,0 +1,426 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-05 11:38+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: daemon.php:105
+msgid ""
+"When you have downloaded your archive and you have checked that its content "
+"is readable, you can start the cleaning (deletion of archived messages) by "
+"this link (irrevocable decision):"
+msgstr ""
+
+#: daemon.php:107 daemon.php:135 daemon.php:195
+msgid "Archive ready to download"
+msgstr ""
+
+#: daemon.php:107 daemon.php:135 daemon.php:195 form.php:192
+msgid "Hello"
+msgstr ""
+
+#: daemon.php:109 daemon.php:197 index.php:220
+msgid "Your archive is available for download until the"
+msgstr ""
+
+#: daemon.php:109 daemon.php:197 index.php:220
+msgid "by this link:"
+msgstr ""
+
+#: daemon.php:137
+msgid "Congratulations, you have relieved your mailbox of"
+msgstr ""
+
+#: daemon.php:137
+msgid "emails"
+msgstr ""
+
+#: daemon.php:195
+msgid "Relaunch"
+msgstr ""
+
+#: daemon.php:199
+msgid "And above all, if you have already downloaded it:"
+msgstr ""
+
+#: daemon.php:201
+msgid ""
+"You can start the cleaning (deletion of archived messages) by this link "
+"(irrevocable decision):"
+msgstr ""
+
+#: form.php:192
+msgid "Queuing"
+msgstr ""
+
+#: form.php:194 index.php:468
+msgid "You can follow the progress of your request by the address: "
+msgstr ""
+
+#: functions.php:737
+msgid "Error"
+msgstr ""
+
+#: functions.php:740
+msgid "Waiting for approval"
+msgstr ""
+
+#: functions.php:743
+msgid "Waiting"
+msgstr ""
+
+#: functions.php:746
+msgid "In progress"
+msgstr ""
+
+#: functions.php:749
+msgid "Finished"
+msgstr ""
+
+#: functions.php:752
+msgid "Unknown"
+msgstr ""
+
+#: header.php:73
+msgid "The directory "
+msgstr ""
+
+#: index.php:168
+msgid "Lighten your mailbox"
+msgstr ""
+
+#: index.php:182
+#, php-format
+msgid "Status of your request [%d]"
+msgstr ""
+
+#: index.php:183
+#, php-format
+msgid "For %s on %s"
+msgstr ""
+
+#: index.php:186
+msgid "Error session : Not Found"
+msgstr ""
+
+#: index.php:191
+msgid "Creation of an archive of your emails: "
+msgstr ""
+
+#: index.php:208 index.php:245
+#, php-format
+msgid "(In front of you : %d, each in turn ...)"
+msgstr ""
+
+#: index.php:222
+#, php-format
+msgid ""
+"It is no longer possible to recover your archive, the deadline of %d days "
+"has expired."
+msgstr ""
+
+#: index.php:228
+msgid "Deleting your emails: "
+msgstr ""
+
+#: index.php:247
+msgid " (after archive)"
+msgstr ""
+
+#: index.php:249
+msgid "It's time to clean up!"
+msgstr ""
+
+#: index.php:267
+msgid ""
+"Online storage is very important on the environment, this tool offers you to "
+"archive your messages by downloading them for storage on an external hard "
+"drive / USB key ..."
+msgstr ""
+
+#: index.php:274
+msgid "Your account"
+msgstr ""
+
+#: index.php:278
+msgid "Setting"
+msgstr ""
+
+#: index.php:282 index.php:456
+msgid "Validation"
+msgstr ""
+
+#: index.php:288
+msgid "Level of computer knowledge"
+msgstr ""
+
+#: index.php:290
+msgid "Beginner"
+msgstr ""
+
+#: index.php:291
+msgid "Enlightened"
+msgstr ""
+
+#: index.php:292
+msgid "Expert"
+msgstr ""
+
+#: index.php:295
+msgid "What do you want to do ?"
+msgstr ""
+
+#: index.php:295
+msgid "archive example"
+msgstr ""
+
+#: index.php:297
+msgid "Archive (download these emails) then delete"
+msgstr ""
+
+#: index.php:298
+msgid "Archive (download these emails)"
+msgstr ""
+
+#: index.php:299
+msgid "Delete these emails"
+msgstr ""
+
+#: index.php:302
+msgid "In what format do you want to download these emails ?"
+msgstr ""
+
+#: index.php:305
+msgid "Open with Thunderbird, Outlook..."
+msgstr ""
+
+#: index.php:309
+msgid "Select emails"
+msgstr ""
+
+#: index.php:310
+msgid "From"
+msgstr ""
+
+#: index.php:315
+msgid "To"
+msgstr ""
+
+#: index.php:322
+msgid "The emails that can be found"
+msgstr ""
+
+#: index.php:324
+msgid "Just the messages received"
+msgstr ""
+
+#: index.php:325
+msgid "Message received + sent"
+msgstr ""
+
+#: index.php:331
+msgid "Enter your email information"
+msgstr ""
+
+#: index.php:334
+msgid "Email adress"
+msgstr ""
+
+#: index.php:339
+msgid "Warning"
+msgstr ""
+
+#: index.php:340
+msgid ""
+"Activate IMAP in your Gmail settings then <a target=\"_blank\" href="
+"\"https://myaccount.google.com/lesssecureapps\">on this page</a> click on "
+"\"Allow less secure applications\" : enable  (<a  target=\"_blank\"  href="
+"\"https://support.google.com/accounts/answer/6010255?hl=en\">source</a>)\n"
+"                                "
+msgstr ""
+
+#: index.php:344
+msgid "Email password"
+msgstr ""
+
+#: index.php:345 index.php:407
+msgid "Your email password"
+msgstr ""
+
+#: index.php:346
+#, php-format
+msgid ""
+"Note for your password : You are using free software (the code of which is "
+"available here), so you can verify that it is used (encrypted with %s) so "
+"that the software performs the requested action temporarily. As soon as the "
+"action is started the password is deleted. Despite this it is good to change "
+"your password frequently, why not tomorrow?"
+msgstr ""
+
+#: index.php:351
+msgid "Automatic detection of IMAP parameters"
+msgstr ""
+
+#: index.php:355
+msgid "I accept the general terms of use"
+msgstr ""
+
+#: index.php:356 index.php:450
+msgid "Next"
+msgstr ""
+
+#: index.php:361
+msgid "Email IMAP Connexion"
+msgstr ""
+
+#: index.php:366
+msgid "We are trying to detect your IMAP configuration, please wait"
+msgstr ""
+
+#: index.php:368 index.php:374 index.php:449 index.php:472
+msgid "Cancel"
+msgstr ""
+
+#: index.php:372
+msgid "We create an overview for validation, please wait"
+msgstr ""
+
+#: index.php:378
+msgid "An error occured"
+msgstr ""
+
+#: index.php:382
+msgid ""
+"We were unable to automatically detect your configuration, but you can "
+"specify it manually. Contact your email provider for more information on "
+"your IMAP connection settings. Check if your password is correct, otherwise "
+"automatic discovery is impossible."
+msgstr ""
+
+#: index.php:386
+msgid ""
+"Contact your email provider for more information on your IMAP connection "
+"settings. Check if your password is correct."
+msgstr ""
+
+#: index.php:390
+msgid "The connection to your mailbox has been successful!"
+msgstr ""
+
+#: index.php:394
+msgid "Automatically search for IMAP settings"
+msgstr ""
+
+#: index.php:398
+msgid "IMAP username"
+msgstr ""
+
+#: index.php:406
+msgid "IMAP password"
+msgstr ""
+
+#: index.php:411
+msgid "IMAP server"
+msgstr ""
+
+#: index.php:414
+msgid "IMAP port"
+msgstr ""
+
+#: index.php:422
+msgid "Connection security"
+msgstr ""
+
+#: index.php:424
+msgid "None"
+msgstr ""
+
+#: index.php:425
+msgid "STARTTLS"
+msgstr ""
+
+#: index.php:426
+msgid "SSL/TLS"
+msgstr ""
+
+#: index.php:429
+msgid "Validate the certificate"
+msgstr ""
+
+#: index.php:430
+msgid "Authentication method"
+msgstr ""
+
+#: index.php:432
+msgid "Normal"
+msgstr ""
+
+#: index.php:433
+msgid "Encrypt"
+msgstr ""
+
+#: index.php:438
+msgid "Select the IMAP folders to use"
+msgstr ""
+
+#: index.php:445
+msgid "Current connection..."
+msgstr ""
+
+#: index.php:451
+msgid "Check the connection"
+msgstr ""
+
+#: index.php:458
+msgid "Here is an overview of the impact of your request:"
+msgstr ""
+
+#: index.php:461
+msgid "Folder name"
+msgstr ""
+
+#: index.php:461
+msgid "Number of emails selected"
+msgstr ""
+
+#: index.php:461
+msgid "Selected email sizes"
+msgstr ""
+
+#: index.php:465
+msgid ""
+"Over quota : Your archive exceeds the allowed quota size. A tip: reduce the "
+"time range (just 1 years, 6 months ...)"
+msgstr ""
+
+#: index.php:467
+msgid "Here we go !"
+msgstr ""
+
+#: index.php:469
+msgid "You will be redirected there automatically in a few seconds"
+msgstr ""
+
+#: index.php:473
+msgid "Validate"
+msgstr ""
+
+#: index.php:547
+msgid ""
+"You are about to delete the messages in your previously selected mailbox."
+"\\nNote: if you have requested an archive check that the download went well, "
+"that the archive is readable and that the messages are present."
+msgstr ""

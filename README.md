@@ -1,46 +1,61 @@
-# dépot  GIT à reset !!!
+# Lighten Mailbox (Béta) - Allégez votre boîte mail
 
+Lighten Mailbox est une interface web qui permet de faire du ménage dans sa boîte mail. Ce ménage ce fait  soit en supprimant des vieux messages, soit en les téléchargeant au format EML ou HTML/TXT. Le ménage ce fait par critère de date (début/fin)  puis en sélectionnant les dossiers IMAP concernés.
 
-php pdo mysql
+Exemple d'utilisation : Télécharger et archiver ([exemple de rendu](https://lighten-mailbox.zici.fr/archive/example/)) ces emails vieux de 2 ans et les enregistrant sur un disque dur externe, puis (quand vous vous êtes assuré de l’intégrité des donnée) supprimer ces messages.
 
-yaml
-openssl
+Instance de test : http://lighten-mailbox.zici.fr/
 
+Exemple d'index d'archive : https://lighten-mailbox.zici.fr/archive/example/ (utilisable hors ligne, dans un navigateur internet depuis une clé usb par exemple...)
+
+## Installation
+
+Pré-requis
+
+* PHP > 7.0
+  * php dbo mysql
+  * php yaml
+  * composer
+    * php-mime-mail-parser
+    * net_dns2
+    * phpmailer
+* Apache http serveur (for htaccess but nginix is possible)
+* Mysql
+* openssl
+
+Télécharger le dépôt git et le rendre accessible en HTTP
+
+Installation des dépendances php : 
+
+```bash
 composer require php-mime-mail-parser/php-mime-mail-parser
 composer require pear/net_dns2
 composer require phpmailer
+```
 
-Theme en Wizard based on "Material Bootstrap Wizard"
+Créer une base de donnée Mysql et y injecter le contenu de  *	*
 
-### License
+```bash
+cat SQL/lightmb.sql | mysql -u utilisateur -p base
+```
 
- This is a free responsive Bootstrap form wizard. 
-                            Download it on <a href="http://azmind.com"><strong>AZMIND</strong></a>, customize and use it as you like!
+Copier le fichier config.yaml
 
+```bash
+cp config.yaml_default config.yaml
+```
 
+Editer el fichier config.yaml et paramétrer ce dont vous avez besoin, notaement les accès Mysql, le mailer...
 
-futur 
-           futur : 
-                                
-                                    https://kwynn.com/t/7/03/php_imap_oauth2.html
-                                
-                                    Intéroger base de données IMAP !
-                                    
-                                    https://framework.zend.com/manual/1.12/fr/zend.mail.read.html
+Pour le daemon, le script ini.d se trouve dans *init.d/lighten-mailbox*
 
-@todo : 
+## Licence 
 
-prise en considération get (pour preview) dans le tabulator
-lien github
-lien exemple format archivage, format fichier HTML / brut exemple
+By [David Mercereau](https://david.mercereau.info)  Licence : [![Créative Common Zero](https://lighten-mailbox.zici.fr/assets/img/CC-Zero-badge.svg)](https://creativecommons.org/publicdomain/zero/1.0/deed.fr) 
 
-+ d'explication...
+Theme en Wizard based on "Material Bootstrap Wizard" (free responsive Bootstrap form wizard download it on <a href="http://azmind.com"><strong>AZMIND</strong></a> !)
 
-Page d'into  / explication...
-Page CGU !
+Les projets libre utilisé dans ce projet : 
 
-https://github.com/php-mime-mail-parser/php-mime-mail-parser
-
-max_execution_time 120 php...
-
-Backup / archive / delete / smaller? your mailbox...
+* Tabulator http://tabulator.info
+* Jquery

@@ -73,6 +73,10 @@ function imapDetectConfig() {
 				$('.btn-check').show();
 				$('.btn-next').hide();
 			} else if (data['result'] == true) {
+				$('.imapTestCon.success').show();
+				if ($('#f1-level').val() == 3) {
+					$('.imap-form').show();
+				}
 				$('.btn-check').hide();
 				$('.btn-next').show();
 				$('#imapTestCon').val(1);
@@ -103,16 +107,21 @@ function imapDetectConfig() {
 					}
 					$('#imapfolder').append('</ul>');
 				});
-				// Expert  & Intermédiaire
-				if ($('#f1-level').val() == 3 ||$('#f1-level').val() == 2) {
-					$('.imap-form').show();
-				// Novice
-				} else if ($('#f1-level').val() == 1) {
-					// Redirection prochaine étape
-					$('.f1-buttons.imap-form').show();
+				if ($('#f1-level').val() == 1) {
 					$('.imapfolder-group').hide();
-					$('.f1 .btn-next').get(0).click();
 				}
+				$('.f1-buttons').show();
+				// Expert  & Intermédiaire
+				// if ($('#f1-level').val() == 3 ||$('#f1-level').val() == 2) {
+				//	$('.imap-form').show();
+				// Novice
+				// # Avec ça, ça bug... (ça semble être le "click")
+				// } else if ($('#f1-level').val() == 1) {
+				// 	// Redirection prochaine étape
+				// 	$('.f1-buttons.imap-form').show();
+				// 	$('.imapfolder-group').hide();
+					// $('.f1 .btn-next').get(0).click();
+				// }
 			}
 		},
 		error: function (xhr, status) {
@@ -133,20 +142,20 @@ function levelChange() {
 	// Expert
 	if ($('#f1-level').val() == 3) {
 		$('#f1-imapAutoDetect').prop('checked',false);
-		$('#f1-format').show();
+		$('.f1-format').show();
 		$('.form-group.imapAutoDetect').show();
 		$('#f1-folderBeginner').hide();
 	// Intermédiaire
 	} else if ($('#f1-level').val() == 2) {
 		$('#f1-imapAutoDetect').prop('checked',true);
 		$('.form-group.imapAutoDetect').show();
-		$('#f1-format').show();
+		$('.f1-format').show();
 		$('#f1-folderBeginner').hide();
 	// Novice
 	} else if ($('#f1-level').val() == 1) {
 		$('#f1-imapAutoDetect').prop('checked',true);
 		$('.form-group.imapAutoDetect').hide();
-		$('#f1-format').hide();
+		$('.f1-format').hide();
 		$('#f1-folderBeginner').show();
 	}
 }
@@ -199,7 +208,6 @@ jQuery(document).ready(function() {
     $('.f1 input[type="checkbox"]').on('focus', function() {
     	$(this).removeClass('checkbox-error');
     });
-    
     
     // next step
     $('.f1 .btn-next').on('click', function() {
@@ -293,6 +301,7 @@ jQuery(document).ready(function() {
 				$("input[name='f1-imapfolder[]']").addClass('checkbox-error');
 			} else {
 				$('.imap-form').hide();
+				$('.imapTestCon').hide();
 				$('.imapfolder-group').hide();
 				$('.previewWait').show();
 				var imapFolderConca = [];
@@ -411,7 +420,6 @@ jQuery(document).ready(function() {
 						cert: cert
 					},
 				success: function( data ) {
-					console.log(data);
 					$('.imapTestCon').hide();
 					$('#imap-folder').empty();
 					if (data['result'] == false) {
@@ -420,6 +428,10 @@ jQuery(document).ready(function() {
 						$('#f1-password').show();
 						$('.btn-check').show();
 					} else if (data['result'] == true) {
+						$('.imapTestCon.success').show();
+						if ($('#f1-level').val() != 3) {
+							$('.imap-form').hide();
+						}
 						// Remplissage du formulaire : 
 						//~ 
 						data['folder'].forEach(function(item){
@@ -431,6 +443,7 @@ jQuery(document).ready(function() {
 							}
 						});
 						$('.imapfolder-group').show();
+						$('.f1-buttons').show();
 						$('#imapTestCon').val(1);
 						$('.btn-check').hide();
 						$('.btn-next').show();

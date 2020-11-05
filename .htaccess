@@ -4,11 +4,17 @@ Options -Indexes
 RewriteEngine on
 
 ## Sécurité
-
 RewriteRule ^config.yaml$   index.php?action=403
+RewriteRule ^daemon.php$   index.php?action=403
 
+# Rewrite
+RewriteCond %{REQUEST_URI} ^/archive/example/
+RewriteRule .* - [L]
+
+RewriteRule ^(.+).html$   index.php?page=$1 [L]
 RewriteRule ^spool_([0-9]+)$   index.php?session_id=$1 [L]
 RewriteRule ^spool_([0-9]+)_DeleteApproval$   index.php?session_id=$1&DeleteApproval=1 [L]
+
 
 #ErrorDocument 404 /index.php?action=404
 #ErrorDocument 403 /index.php?action=403

@@ -1,0 +1,4 @@
+Modification source traduction 
+	xgettext *.php -o lang/messages.pot --from-code="UTF-8"
+	msgmerge --no-wrap -N lang/fr/LC_MESSAGES/messages.po lang/messages.pot > lang/fr/LC_MESSAGES/messages-new.po
+

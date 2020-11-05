@@ -9,7 +9,7 @@ archive:
     life: 15  # in Day
 
 delete:
-    relaunch:   # Relance après date de création 
+    relaunch:   # Relance après date de création  (in day)
         - 5
         - 10
 

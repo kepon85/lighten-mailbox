@@ -1,0 +1,1336 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: calcpvautonome\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-16 14:36+0100\n"
+"PO-Revision-Date: 2018-02-16 08:47-0500\n"
+"Last-Translator: kepon85 <david@mercereau.info>\n"
+"Language-Team: Afar\n"
+"Language: aa_ER\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: calcpvautonome\n"
+"X-Crowdin-Language: aa\n"
+"X-Crowdin-File: /v4.0/messages.pot\n"
+
+#: CalcConsommation.php:2
+msgid "In order to know the electric consumption (in Watts) of your devices you may"
+msgstr "crwdns283:0crwdne283:0"
+
+#: CalcConsommation.php:4
+msgid "Check on the device's specification sheet or label"
+msgstr "crwdns284:0crwdne284:0"
+
+#: CalcConsommation.php:5
+msgid "You may get a Wattmeter (~10&euro;) that will show you the exact consumption if plugged between power socket and the applience"
+msgstr "crwdns285:0crwdne285:0"
+
+#: CalcConsommation.php:7
+msgid "To calculate the dimensions of an autonomous solar installation, consider that it is wintertime (longer lighting time needed, but the fridge might be unplugged due to low temperature outside...)"
+msgstr "crwdns286:0crwdne286:0"
+
+#: CalcConsommation.php:9
+msgid "First sober example"
+msgstr "crwdns287:0crwdne287:0"
+
+#: CalcConsommation.php:10
+msgid "Second example"
+msgstr "crwdns288:0crwdne288:0"
+
+#: CalcConsommation.php:15
+msgid "Equipment"
+msgstr "crwdns289:0crwdne289:0"
+
+#: CalcConsommation.php:16
+msgid "Power (Watt)"
+msgstr "crwdns290:0crwdne290:0"
+
+#: CalcConsommation.php:17
+msgid "Turn on<br />simultaneously"
+msgstr "crwdns291:0crwdne291:0"
+
+#: CalcConsommation.php:18
+msgid "Number"
+msgstr "crwdns292:0crwdne292:0"
+
+#: CalcConsommation.php:19
+msgid "Daily use time"
+msgstr "crwdns293:0crwdne293:0"
+
+#: CalcConsommation.php:20
+msgid "Automatic consumption<br />calculation"
+msgstr "crwdns294:0crwdne294:0"
+
+#: CalcConsommation.php:21
+msgid "Daily<br />consumption"
+msgstr "crwdns295:0crwdne295:0"
+
+#: CalcConsommation.php:27 CalcPvAutonome.php:1155
+msgid "Your daily electrical needs"
+msgstr "crwdns296:0crwdne296:0"
+
+#: CalcConsommation.php:28 CalcPvAutonome.php:1160
+msgid "Your need in maximum electrical power"
+msgstr "crwdns297:0crwdne297:0"
+
+#: CalcConsommation.php:28
+msgid "Total addition of power required by devices that are likely to be plugged and on at the same time OR consumption of the most power demanding appliance in case it is not plugged simultaneously with the rest"
+msgstr "crwdns298:0crwdne298:0"
+
+#: CalcConsommation.php:29
+msgid "Click here to introduce those values to calculate <br/> the dimension of your autonomous solar installation"
+msgstr "crwdns299:0crwdne299:0"
+
+#: CalcConsommation.php:31
+msgid "Add an empty line"
+msgstr "crwdns300:0crwdne300:0"
+
+#: CalcConsommation.php:33
+msgid "Add a line according to a template..."
+msgstr "crwdns301:0crwdne301:0"
+
+#: CalcConsommation.php:39
+msgid "The models' values are approximate estimations, if you need more precise measurement consider using Wattmeter to determine the exact consumption of each of yours devices"
+msgstr "crwdns302:0crwdne302:0"
+
+#: CalcConsommation.php:45
+msgid "Share / Save this table"
+msgstr "crwdns303:0crwdne303:0"
+
+#: CalcConsommation.php:64
+msgid "Tick all the devices that are likely to be switched on at the same time (for example: Pc, fridge, lightbulb in the livingroom). At the other hand, you might rather want to unplug your Pc when you are using a drill"
+msgstr "crwdns304:0crwdne304:0"
+
+#: CalcConsommation.php:97
+msgid "Ticked: your daily consumption will be estimated automatically<br/>Unticked: you shall specifiy your daily consumption (useful in case your fridge is plugged 24/7 yet it goes on only if room temperature rises"
+msgstr "crwdns305:0crwdne305:0"
+
+#: CalcConsommation.php:103
+msgid "The calculation is: Power (W) * Time (in hours) * Number = Wh/j (Watt Hour Day)"
+msgstr "crwdns306:0crwdne306:0"
+
+#: CalcConsommation.php:237
+msgid "Copy the internet address below keep it there or share it here..."
+msgstr "crwdns307:0crwdne307:0"
+
+#: CalcPvAutonome.php:8
+msgid "January"
+msgstr "crwdns308:0crwdne308:0"
+
+#: CalcPvAutonome.php:9
+msgid "February"
+msgstr "crwdns309:0crwdne309:0"
+
+#: CalcPvAutonome.php:10
+msgid "March"
+msgstr "crwdns310:0crwdne310:0"
+
+#: CalcPvAutonome.php:11
+msgid "April"
+msgstr "crwdns311:0crwdne311:0"
+
+#: CalcPvAutonome.php:12
+msgid "May"
+msgstr "crwdns312:0crwdne312:0"
+
+#: CalcPvAutonome.php:13
+msgid "June"
+msgstr "crwdns313:0crwdne313:0"
+
+#: CalcPvAutonome.php:14
+msgid "July"
+msgstr "crwdns314:0crwdne314:0"
+
+#: CalcPvAutonome.php:15
+msgid "August"
+msgstr "crwdns315:0crwdne315:0"
+
+#: CalcPvAutonome.php:16
+msgid "September"
+msgstr "crwdns316:0crwdne316:0"
+
+#: CalcPvAutonome.php:17
+msgid "October"
+msgstr "crwdns317:0crwdne317:0"
+
+#: CalcPvAutonome.php:18
+msgid "November"
+msgstr "crwdns318:0crwdne318:0"
+
+#: CalcPvAutonome.php:19
+msgid "December"
+msgstr "crwdns319:0crwdne319:0"
+
+#: CalcPvAutonome.php:42
+msgid "Daily need is not correct because < 0"
+msgstr "crwdns320:0crwdne320:0"
+
+#: CalcPvAutonome.php:43
+msgid "Maximum power requirement is not correct because < 0"
+msgstr "crwdns321:0crwdne321:0"
+
+#: CalcPvAutonome.php:45
+msgid "Panel's custom power is not correct because < 0"
+msgstr "crwdns322:0crwdne322:0"
+
+#: CalcPvAutonome.php:46
+msgid "Panel's custom open circuit voltage (Vdoc) is not correct because < 0"
+msgstr "crwdns323:0crwdne323:0"
+
+#: CalcPvAutonome.php:47
+msgid "Panel's custom short circuit current (Isc) is not correct because < 0"
+msgstr "crwdns324:0crwdne324:0"
+
+#: CalcPvAutonome.php:50
+msgid "Custom battery voltage is not correct because < 0"
+msgstr "crwdns325:0crwdne325:0"
+
+#: CalcPvAutonome.php:51
+msgid "Custom battery capacity is not correct because < 0"
+msgstr "crwdns326:0crwdne326:0"
+
+#: CalcPvAutonome.php:59
+msgid "Custom charge controller voltage is incorrect because < 0"
+msgstr "crwdns327:0crwdne327:0"
+
+#: CalcPvAutonome.php:60
+msgid "Custom charge controller power is not correct because < 0"
+msgstr "crwdns328:0crwdne328:0"
+
+#: CalcPvAutonome.php:61
+msgid "Custom charge controller short-circuit current is incorrect because < 0"
+msgstr "crwdns329:0crwdne329:0"
+
+#: CalcPvAutonome.php:63
+msgid "The autonomous days amount is not correct because < 0"
+msgstr "crwdns330:0crwdne330:0"
+
+#: CalcPvAutonome.php:64
+msgid "Electrical yield of batteries is not correct because < 0"
+msgstr "crwdns331:0crwdne331:0"
+
+#: CalcPvAutonome.php:65
+msgid "Installation electrical efficiency is not correct because < 0"
+msgstr "crwdns332:0crwdne332:0"
+
+#: CalcPvAutonome.php:66
+msgid "Discharge level is not correct because < 0"
+msgstr "crwdns333:0crwdne333:0"
+
+#: CalcPvAutonome.php:67
+msgid "The safety margin Icc of the charge controller is not correct because < 0"
+msgstr "crwdns334:0crwdne334:0"
+
+#: CalcPvAutonome.php:68
+msgid "Panels and charge controller in-between distance is not correct because < 0"
+msgstr "crwdns335:0crwdne335:0"
+
+#: CalcPvAutonome.php:69
+msgid "Batteries and charge controller in-between distance is not correct because < 0"
+msgstr "crwdns336:0crwdne336:0"
+
+#: CalcPvAutonome.php:70
+msgid "Conductor resistivity is not correct because < 0"
+msgstr "crwdns337:0crwdne337:0"
+
+#: CalcPvAutonome.php:71
+msgid "Tolerable voltage drop is not correct because < 0"
+msgstr "crwdns338:0crwdne338:0"
+
+#: CalcPvAutonome.php:80
+msgid "Panels orientation is not correct. "
+msgstr "crwdns339:0crwdne339:0"
+
+#: CalcPvAutonome.php:83
+msgid "Panels inclination is not correct, it must be between 0 (horizontal) and 90 (vertical)"
+msgstr "crwdns340:0crwdne340:0"
+
+#: CalcPvAutonome.php:86
+msgid "You must enter latitude and longitude to deduce solar irradiation with a click on the map of the world."
+msgstr "crwdns341:0crwdne341:0"
+
+#: CalcPvAutonome.php:100
+msgid "Unable to download solar irradiation data from <a href=\"http://re.jrc.ec.europa.eu/PVGIS5-release.html\" target=\"_blank\"> PVGIS </a>, switch to mode manual or use <a href=\"http://calcpvautonome.zici.fr/v2.2/\"> the previous version </a> of CalcPvAutonome."
+msgstr "crwdns342:0crwdne342:0"
+
+#: CalcPvAutonome.php:111
+msgid "Incorrect solar irradiation data. The position shown on the map may not be covered by <a href=\"http://re.jrc.ec.europa.eu/PVGIS5-release.html\" target=\"_blank\"> PVGIS </a>."
+msgstr "crwdns343:0crwdne343:0"
+
+#: CalcPvAutonome.php:117
+msgid "Average daily radiation is not correct because < 0"
+msgstr "crwdns344:0crwdne344:0"
+
+#: CalcPvAutonome.php:121
+msgid "Errors in the form prevent you from continuing, please correct :"
+msgstr "crwdns345:0crwdne345:0"
+
+#: CalcPvAutonome.php:128
+msgid "Result of the dimension calculation"
+msgstr "crwdns346:0crwdne346:0"
+
+#: CalcPvAutonome.php:129
+msgid "<b>Warning</b>: Results are approximate, it is recommended to doublecheck with sales representative and validate your installation before buying materials."
+msgstr "crwdns347:0crwdne347:0"
+
+#: CalcPvAutonome.php:133 CalcPvAutonome.php:991
+msgid "Photovoltaic panel"
+msgstr "crwdns348:0crwdne348:0"
+
+#: CalcPvAutonome.php:153
+msgid "Average sunlight"
+msgstr "crwdns349:0crwdne349:0"
+
+#: CalcPvAutonome.php:153
+msgid "kWh/m&sup2;/d"
+msgstr "crwdns350:0crwdne350:0"
+
+#: CalcPvAutonome.php:180
+msgid "Here we are looking for the power (peak, expressed in W) from solar panels to be mounted to fulfill your needs according to your geographical location. The formula is as follow : "
+msgstr "crwdns351:0crwdne351:0"
+
+#: CalcPvAutonome.php:181
+msgid "Pp = Dn / (Yb X Yi X Rd)"
+msgstr "crwdns352:0crwdne352:0"
+
+#: CalcPvAutonome.php:183
+msgid "Pp (Wp) : Peak power (goal)"
+msgstr "crwdns353:0crwdne353:0"
+
+#: CalcPvAutonome.php:184 CalcPvAutonome.php:366
+msgid "Dn (Wh/d) : Daily needs"
+msgstr "crwdns354:0crwdne354:0"
+
+#: CalcPvAutonome.php:185
+msgid "Yb : electrical yield of batteries"
+msgstr "crwdns355:0crwdne355:0"
+
+#: CalcPvAutonome.php:186
+msgid "Yi : electrical yield for the remaining installation (charge controller, ...)"
+msgstr "crwdns356:0crwdne356:0"
+
+#: CalcPvAutonome.php:187
+msgid "Rd : average daily radiation of the worst month in the plane of the panel (kWh/m&sup2;/d)"
+msgstr "crwdns357:0crwdne357:0"
+
+#: CalcPvAutonome.php:224
+#, php-format
+msgid "According to data from <a href=\"http://re.jrc.ec.europa.eu/PVGIS5-release.html\" target=\"_blank\">PVGIS</a>, the value for the selected location is %s kWh/m&sup2;/d"
+msgstr "crwdns358:0%scrwdne358:0"
+
+#: CalcPvAutonome.php:231 CalcPvAutonome.php:371
+msgid "In your case, result is"
+msgstr "crwdns359:0crwdne359:0"
+
+#: CalcPvAutonome.php:235 CalcPvAutonome.php:374
+msgid "Hide the process"
+msgstr "crwdns360:0crwdne360:0"
+
+#: CalcPvAutonome.php:236
+msgid "Pp"
+msgstr "crwdns361:0crwdne361:0"
+
+#: CalcPvAutonome.php:239
+msgid "Photovoltaic panels produce electricity from sunlight (solar radiation)."
+msgstr "crwdns362:0crwdne362:0"
+
+#: CalcPvAutonome.php:240
+#, php-format
+msgid "According entered data, <b>%sW</b> of solar panel are required to fulfill your daily needs of %sWh/d."
+msgstr "crwdns363:0%scrwdnd363:0%scrwdne363:0"
+
+#: CalcPvAutonome.php:332
+#, php-format
+msgid "One possibility could be to have <b>%d panel(s)</b> %s of <b>%dW</b> each"
+msgstr "crwdns364:0%dcrwdnd364:0%scrwdnd364:0%dcrwdne364:0"
+
+#: CalcPvAutonome.php:332 CalcPvAutonome.php:336
+#, php-format
+msgid "Specificity of the panel"
+msgstr "crwdns365:0crwdne365:0"
+
+#: CalcPvAutonome.php:332 CalcPvAutonome.php:336
+#, php-format
+msgid "Which extend the unit capacity to %dW"
+msgstr "crwdns366:0%dcrwdne366:0"
+
+#: CalcPvAutonome.php:334
+#, php-format
+msgid "With your personnalized solar panel the hypothesis would be to have <b>%d panel(s)</b> of <b>%dW</b> each, which could raise the plant up to %dW"
+msgstr "crwdns367:0%dcrwdnd367:0%dcrwdnd367:0%dcrwdne367:0"
+
+#: CalcPvAutonome.php:336
+#, php-format
+msgid "With %s selected panel of <b>%dW</b>, one hypothesis would be to have <b>%d of panel(s)</b>"
+msgstr "crwdns368:0%scrwdnd368:0%dcrwdnd368:0%dcrwdne368:0"
+
+#: CalcPvAutonome.php:342 CalcPvAutonome.php:1000
+msgid "Batterie"
+msgstr "crwdns369:0crwdne369:0"
+
+#: CalcPvAutonome.php:344
+msgid "We are looking here for the nominal capacity expressed in ampere per hour (Ah, given in <a href=\"http://www.batterie-solaire.com/batterie-delestage-electrique.htm\" target=\"_blank\">C10</a>)"
+msgstr "crwdns370:0crwdne370:0"
+
+#: CalcPvAutonome.php:363
+msgid "Cap = (Dn x Aut) / (DD x U)"
+msgstr "crwdns371:0crwdne371:0"
+
+#: CalcPvAutonome.php:365
+msgid "Cap (Ah) : Nominal capacity of batteries (in <a href=\"http://www.batterie-solaire.com/batterie-delestage-electrique.htm\" target=\"_blank\">C10</a>))"
+msgstr "crwdns372:0crwdne372:0"
+
+#: CalcPvAutonome.php:367
+msgid "Aut: Autonomous days amount (no sun)"
+msgstr "crwdns373:0crwdne373:0"
+
+#: CalcPvAutonome.php:368
+msgid "DD (%)"
+msgstr "crwdns374:0crwdne374:0"
+
+#: CalcPvAutonome.php:368
+#, php-format
+msgid "With lead batteries, the critical threshold of 50% of discharge mustn't be reached, 20% being ideal"
+msgstr "crwdns375:0crwdne375:0"
+
+#: CalcPvAutonome.php:368
+msgid "Maximum discharge rate"
+msgstr "crwdns376:0crwdne376:0"
+
+#: CalcPvAutonome.php:369
+msgid "U (V)"
+msgstr "crwdns377:0crwdne377:0"
+
+#: CalcPvAutonome.php:369 CalcPvAutonome.php:1394
+msgid "In automatic mode the batteries voltage will be deducted from the panel need <br />From 0 to 500W : 12V<br />From 500 to 1500 W : 24V<br />Above 1500 W : 48V"
+msgstr "crwdns378:0crwdne378:0"
+
+#: CalcPvAutonome.php:369 CalcPvAutonome.php:1388
+msgid "Final battery plant voltage"
+msgstr "crwdns379:0crwdne379:0"
+
+#: CalcPvAutonome.php:375
+msgid "Cap"
+msgstr "crwdns380:0crwdne380:0"
+
+#: CalcPvAutonome.php:377
+#, php-format
+msgid "Batteries are used to store electric energy produced by the panels. You will need a battery plant of <b>%d Ah at %d V</b>."
+msgstr "crwdns381:0%dcrwdnd381:0%dcrwdne381:0"
+
+#: CalcPvAutonome.php:378
+msgid "See, understand the procedure, the calculation"
+msgstr "crwdns382:0crwdne382:0"
+
+#: CalcPvAutonome.php:385
+#, php-format
+msgid "The discharge current of the battery plant must not exceed %d"
+msgstr "crwdns383:0%dcrwdne383:0"
+
+#: CalcPvAutonome.php:385 CalcPvAutonome.php:397
+#, php-format
+msgid "In our case it gives"
+msgstr "crwdns384:0crwdne384:0"
+
+#: CalcPvAutonome.php:386
+#, php-format
+msgid "Yet with a max power need of %dW, the discharge current is"
+msgstr "crwdns385:0%dcrwdne385:0"
+
+#: CalcPvAutonome.php:387
+#, php-format
+msgid "In order to respond to a %dW max power need, you need to increase the battery plant by "
+msgstr "crwdns386:0%dcrwdne386:0"
+
+#: CalcPvAutonome.php:397
+#, php-format
+msgid "The battery plant charging current musn't exceed %d"
+msgstr "crwdns387:0%dcrwdne387:0"
+
+#: CalcPvAutonome.php:398
+#, php-format
+msgid "Yet with %dW panels the charge current is"
+msgstr "crwdns388:0%dcrwdne388:0"
+
+#: CalcPvAutonome.php:399
+#, php-format
+msgid "If your charge controller allows it you can limit it or increase your battery plant to"
+msgstr "crwdns389:0crwdne389:0"
+
+#: CalcPvAutonome.php:401
+msgid "We will state to increase the battery plant"
+msgstr "crwdns390:0crwdne390:0"
+
+#: CalcPvAutonome.php:494
+#, php-format
+msgid "A wiring hypothesis would be to have <b>%d></b> <b>%s</b> type batteries, which increases the plant capacity up to %dAh"
+msgstr "crwdns391:0%dcrwdnd391:0%scrwdnd391:0%dcrwdne391:0"
+
+#: CalcPvAutonome.php:496
+#, php-format
+msgid "You chose to use custom %dAh at %dV battery. Here is a wiring hypothesis with <b>%d</b> of these batteries which raise the plant capacity to %dAh"
+msgstr "crwdns392:0%dcrwdnd392:0%dcrwdnd392:0%dcrwdnd392:0%dcrwdne392:0"
+
+#: CalcPvAutonome.php:498
+#, php-format
+msgid "You chose to use <b>%s</b> type batteries. Here is a wiring hypothesis with <b>%d</b> of these batteries which raise the plant capacity to %dAh"
+msgstr "crwdns393:0%scrwdnd393:0%dcrwdnd393:0%dcrwdne393:0"
+
+#: CalcPvAutonome.php:500
+msgid "serialized batteries"
+msgstr "crwdns394:0crwdne394:0"
+
+#: CalcPvAutonome.php:500 CalcPvAutonome.php:589 CalcPvAutonome.php:597
+msgid "Battery voltage"
+msgstr "crwdns395:0crwdne395:0"
+
+#: CalcPvAutonome.php:500
+msgid "serie(s)"
+msgstr "crwdns396:0crwdne396:0"
+
+#: CalcPvAutonome.php:500
+msgid "for a voltage of"
+msgstr "crwdns397:0crwdne397:0"
+
+#: CalcPvAutonome.php:502
+msgid "on"
+msgstr "crwdns398:0crwdne398:0"
+
+#: CalcPvAutonome.php:502
+msgid "parallel(s)"
+msgstr "crwdns399:0crwdne399:0"
+
+#: CalcPvAutonome.php:502
+msgid "Battery capacity"
+msgstr "crwdns400:0crwdne400:0"
+
+#: CalcPvAutonome.php:502
+msgid "for a capacity of"
+msgstr "crwdns401:0crwdne401:0"
+
+#: CalcPvAutonome.php:504
+msgid "(<a rel=\"tooltip\" class=\"bulles\" target=\"_blank\" title=\"To understand the battery connection click here\" href=\"http://www.solarmad-nrj.com/cablagebatterie.html\">?</a>)"
+msgstr "crwdns402:0crwdne402:0"
+
+#: CalcPvAutonome.php:506
+msgid "Sorry we failed to make a wiring hypothesis for the batteries"
+msgstr "crwdns403:0crwdne403:0"
+
+#: CalcPvAutonome.php:508
+msgid "We advice you to switch back to automatic mode, a wiring isn't wise with this model"
+msgstr "crwdns404:0crwdne404:0"
+
+#: CalcPvAutonome.php:516 CalcPvAutonome.php:1004 CalcPvAutonome.php:1007
+#: CalcPvAutonome.php:1454
+msgid "Charge controller"
+msgstr "crwdns405:0crwdne405:0"
+
+#: CalcPvAutonome.php:517
+msgid "The charge controller stands between batteries and panels, its role is to handle batteries charge depending on what the panels can provide"
+msgstr "crwdns406:0crwdne406:0"
+
+#: CalcPvAutonome.php:571
+msgid "Sorry, unable to establish a panel/charge controller wiring hypothesis"
+msgstr "crwdns407:0crwdne407:0"
+
+#: CalcPvAutonome.php:573
+msgid "We recommend to switch charge controller and/or panels to automatic mode"
+msgstr "crwdns408:0crwdne408:0"
+
+#: CalcPvAutonome.php:578
+#, php-format
+msgid "Warning : for this hypothesis we switched to %d panels"
+msgstr "crwdns409:0%dcrwdne409:0"
+
+#: CalcPvAutonome.php:581
+msgid "With your custom charge controller, a"
+msgstr "crwdns410:0crwdne410:0"
+
+#: CalcPvAutonome.php:583
+#, php-format
+msgid "You force the %s charge controller selection, a"
+msgstr "crwdns411:0%scrwdne411:0"
+
+#: CalcPvAutonome.php:585
+msgid "A"
+msgstr "crwdns412:0crwdne412:0"
+
+#: CalcPvAutonome.php:588
+#, php-format
+msgid "hypothesis would be to have <b>%d %s type charge controller</b>"
+msgstr "crwdns413:0%dcrwdnd413:0%scrwdne413:0"
+
+#: CalcPvAutonome.php:589 CalcPvAutonome.php:597
+msgid "With similar characteristics"
+msgstr "crwdns414:0crwdne414:0"
+
+#: CalcPvAutonome.php:589 CalcPvAutonome.php:597 CalcPvAutonome.php:1481
+msgid "Maximum power panel"
+msgstr "crwdns415:0crwdne415:0"
+
+#: CalcPvAutonome.php:589 CalcPvAutonome.php:597
+msgid "Open circuit voltage panel"
+msgstr "crwdns416:0crwdne416:0"
+
+#: CalcPvAutonome.php:589 CalcPvAutonome.php:597
+msgid "Current short circuit"
+msgstr "crwdns417:0crwdne417:0"
+
+#: CalcPvAutonome.php:590
+#, php-format
+msgid "and on each connect serialized <b>%d panel(s) "
+msgstr "crwdns418:0%dcrwdne418:0"
+
+#: CalcPvAutonome.php:592 CalcPvAutonome.php:604
+#, php-format
+msgid " on %d parallel(s)"
+msgstr "crwdns419:0%dcrwdne419:0"
+
+#: CalcPvAutonome.php:596
+#, php-format
+msgid "wiring hypothesis would be to have a <b>%s type charge controller</b>"
+msgstr "crwdns420:0%scrwdne420:0"
+
+#: CalcPvAutonome.php:598
+msgid "on which would be connected "
+msgstr "crwdns421:0crwdne421:0"
+
+#: CalcPvAutonome.php:600
+msgid "panel"
+msgstr "crwdns422:0crwdne422:0"
+
+#: CalcPvAutonome.php:602 CalcPvAutonome.php:617
+#, php-format
+msgid "serialized panels"
+msgstr "crwdns423:0crwdne423:0"
+
+#: CalcPvAutonome.php:612
+#, php-format
+msgid "A type %s charge controller, with a <b>%dV</b> battery plant, allows : "
+msgstr "crwdns424:0%scrwdnd424:0%dcrwdne424:0"
+
+#: CalcPvAutonome.php:614
+#, php-format
+msgid "<b>%dW</b> max panel power : "
+msgstr "crwdns425:0%dcrwdne425:0"
+
+#: CalcPvAutonome.php:615
+#, php-format
+msgid "With a total of %d %dW panel(s), we reach <b>%dW</b>"
+msgstr "crwdns426:0%dcrwdnd426:0%dcrwdnd426:0%dcrwdne426:0"
+
+#: CalcPvAutonome.php:615
+#, php-format
+msgid "panel(s)"
+msgstr "crwdns427:0crwdne427:0"
+
+#: CalcPvAutonome.php:616
+#, php-format
+msgid "<b>%dV</b> max PV voltage of open circuit : "
+msgstr "crwdns428:0%dcrwdne428:0"
+
+#: CalcPvAutonome.php:617
+#, php-format
+msgid "With %d serialized panel(s) of %dV of (Vdoc) voltage, we reach <b>%dV</b>"
+msgstr "crwdns429:0%dcrwdnd429:0%dcrwdnd429:0%dcrwdne429:0"
+
+#: CalcPvAutonome.php:618
+#, php-format
+msgid "<b>%dA</b> max PV short-circuit current :"
+msgstr "crwdns430:0%dcrwdne430:0"
+
+#: CalcPvAutonome.php:619
+#, php-format
+msgid "With %d parallel panel(s) having %dA intensity (Isc) and a %d%% security margin, we reach <b>%dA</b>"
+msgstr "crwdns431:0%dcrwdnd431:0%dcrwdnd431:0%dcrwdnd431:0%%crwdnd431:0%dcrwdne431:0"
+
+#: CalcPvAutonome.php:619
+#, php-format
+msgid "parallel panel(s)"
+msgstr "crwdns432:0crwdne432:0"
+
+#: CalcPvAutonome.php:621
+msgid "Note: serialization multiplies voltage (V) and paralleling multiplies the intensity (I)"
+msgstr "crwdns433:0crwdne433:0"
+
+#: CalcPvAutonome.php:622
+msgid "All these characteristics are available in the product's technical sheet. You can customize your charge controller characteristics in <i>Export</i> mode."
+msgstr "crwdns434:0crwdne434:0"
+
+#: CalcPvAutonome.php:623 CalcPvAutonome.php:714
+#, php-format
+msgid "Hide process"
+msgstr "crwdns435:0crwdne435:0"
+
+#: CalcPvAutonome.php:626
+msgid "See, understand the process"
+msgstr "crwdns436:0crwdne436:0"
+
+#: CalcPvAutonome.php:629
+msgid "Cable diagram"
+msgstr "crwdns438:0crwdne438:0"
+
+#: CalcPvAutonome.php:633
+msgid "Some wiring hypothesis did not succeed, it is not possible to submit a wiring diagram"
+msgstr "crwdns439:0crwdne439:0"
+
+#: CalcPvAutonome.php:650
+msgid "A wiring diagram was established according to panel/charge controller/battery hypothesis :"
+msgstr "crwdns440:0crwdne440:0"
+
+#: CalcPvAutonome.php:657 CalcPvAutonome.php:1012
+#, php-format
+msgid "Panel string boxe"
+msgstr "crwdns903:0crwdne903:0"
+
+#: CalcPvAutonome.php:658
+msgid "Beyond 2 string, it is strongly recommended to install a panel string boxe. Panel string boxe is collect DC power from panel strings with blocking diodes on each string for protecting panels from reverse current flow. The collected power is then transferred to charge controller."
+msgstr "crwdns904:0crwdne904:0"
+
+#: CalcPvAutonome.php:662 CalcPvAutonome.php:1022 CalcPvAutonome.php:1026
+msgid "Converter"
+msgstr "crwdns441:0crwdne441:0"
+
+#: CalcPvAutonome.php:664
+#, php-format
+msgid "The converter goal is to transform batteries DC current (here %dV) in AC current usable for standard devices. You need a converter able to deliver the %dW max electric power you need"
+msgstr "crwdns442:0%dcrwdnd442:0%dcrwdne442:0"
+
+#: CalcPvAutonome.php:668
+msgid "Sorry, could'nt find a converter for such power"
+msgstr "crwdns443:0crwdne443:0"
+
+#: CalcPvAutonome.php:673
+#, php-format
+msgid "An hypothesis would be to choose a <b>%s type converter</b> that goes up to %dW max power with possible peaks at %dW."
+msgstr "crwdns444:0%scrwdnd444:0%dcrwdnd444:0%dcrwdne444:0"
+
+#: CalcPvAutonome.php:675
+#, php-format
+msgid "However, in order to avoid battery damage, you won't be able to go above %dW"
+msgstr "crwdns445:0%dcrwdne445:0"
+
+#: CalcPvAutonome.php:681 CalcPvAutonome.php:1029
+msgid "Battery controler"
+msgstr "crwdns446:0crwdne446:0"
+
+#: CalcPvAutonome.php:683
+msgid "It is recommended to have a bettery controleur in order to check battery plant charge state"
+msgstr "crwdns447:0crwdne447:0"
+
+#: CalcPvAutonome.php:690
+msgid "However, considering the small size of your system, a voltmeter would be more appropriate. With a <a href=\"https://www.solariflex.com/smartblog/19/comment-interpreter-voltage-batteries.html\">correspondence table</a> you can approximately determine the charge percentage"
+msgstr "crwdns448:0crwdne448:0"
+
+#: CalcPvAutonome.php:693
+msgid "The wiring"
+msgstr "crwdns449:0crwdne449:0"
+
+#: CalcPvAutonome.php:696
+msgid "Wire section choice ( <a href=\"http://solarsud.blogspot.fr/2014/11/calcul-de-la-section-du-cable.html\" target=\"_blank\">calculate</a>) is important in order to avoid electricity lossess"
+msgstr "crwdns450:0crwdne450:0"
+
+#: CalcPvAutonome.php:710
+#, php-format
+msgid "Between panels and charge controller, for a distance of %sm, a %dmm&sup2; section cable is recommended"
+msgstr "crwdns451:0%scrwdnd451:0%dcrwdne451:0"
+
+#: CalcPvAutonome.php:712 CalcPvAutonome.php:760
+#, php-format
+msgid "see, understand the procedure"
+msgstr "crwdns452:0crwdne452:0"
+
+#: CalcPvAutonome.php:715 CalcPvAutonome.php:763
+#, php-format
+msgid "The formula to calculate the wire section in order to avoid loss is :"
+msgstr "crwdns453:0crwdne453:0"
+
+#: CalcPvAutonome.php:716 CalcPvAutonome.php:764
+#, php-format
+msgid "S = Rho x L x I / VL"
+msgstr "crwdns454:0crwdne454:0"
+
+#: CalcPvAutonome.php:718 CalcPvAutonome.php:766
+#, php-format
+msgid "S (mm&sup2;) : Wire section"
+msgstr "crwdns455:0crwdne455:0"
+
+#: CalcPvAutonome.php:719 CalcPvAutonome.php:767
+#, php-format
+msgid "Rho (ohm) : Wire <a href=\"https://en.wikipedia.org/wiki/Electrical_resistivity_and_conductivity\" target=\"_blank\">resistivity</a> (0,017ohm for copper)"
+msgstr "crwdns456:0crwdne456:0"
+
+#: CalcPvAutonome.php:720 CalcPvAutonome.php:768
+#, php-format
+msgid "L (m) : back and forth wire length"
+msgstr "crwdns457:0crwdne457:0"
+
+#: CalcPvAutonome.php:721
+#, php-format
+msgid "I (A) : L\\’intensité (ici l'intensité des panneaux x le nombre de parallèle(s))"
+msgstr "crwdns458:0crwdne458:0"
+
+#: CalcPvAutonome.php:722 CalcPvAutonome.php:770
+#, php-format
+msgid "VL (V) : admitted wire level voltage loss (%s%% of voltage)"
+msgstr "crwdns459:0%scrwdnd459:0%%crwdne459:0"
+
+#: CalcPvAutonome.php:723
+#, php-format
+msgid "(panels voltage * number of series) * %d/100"
+msgstr "crwdns460:0%dcrwdne460:0"
+
+#: CalcPvAutonome.php:725 CalcPvAutonome.php:773
+#, php-format
+msgid "In our case it gives : "
+msgstr "crwdns461:0crwdne461:0"
+
+#: CalcPvAutonome.php:729 CalcPvAutonome.php:776
+#, php-format
+msgid "But that section doesn't respect the %dA/mm&sup2; rule which prevents heating."
+msgstr "crwdns462:0%dcrwdne462:0"
+
+#: CalcPvAutonome.php:730 CalcPvAutonome.php:777
+#, php-format
+msgid "To respect the rule, we need to get close to a <b>%s</b>mm&sup2; section"
+msgstr "crwdns463:0%scrwdne463:0"
+
+#: CalcPvAutonome.php:742 CalcPvAutonome.php:787
+msgid "There is no realistic wire section determinable. You should probably decrease distance between devices."
+msgstr "crwdns464:0crwdne464:0"
+
+#: CalcPvAutonome.php:745 CalcPvAutonome.php:790
+#, php-format
+msgid "Nearest wire section suggested : <b>%s</b>, approximate cost %d&euro;"
+msgstr "crwdns465:0%scrwdnd465:0%dcrwdne465:0"
+
+#: CalcPvAutonome.php:758
+#, php-format
+msgid "Between charge controller and batteries, for a %sm distance, a wire section of %smm&sup2; is recommended"
+msgstr "crwdns466:0%scrwdnd466:0%scrwdne466:0"
+
+#: CalcPvAutonome.php:769
+#, php-format
+msgid "I (A): Intensity (here the power of the panels / the voltage of the battery bank)"
+msgstr "crwdns468:0crwdne468:0"
+
+#: CalcPvAutonome.php:771
+#, php-format
+msgid "Batteries voltage, i. e. %dV * %d/100"
+msgstr "crwdns469:0%dcrwdnd469:0%dcrwdne469:0"
+
+#: CalcPvAutonome.php:794
+msgid "Another and more complete wire section calculator is avalaible at <a href=\"http://www.sigma-tec.fr/textes/texte_cables.html\" target=\"_blank\">sigma-tec</a>."
+msgstr "crwdns470:0crwdne470:0"
+
+#: CalcPvAutonome.php:818
+msgid "PVGIS Simulation, performance prediction"
+msgstr "crwdns471:0crwdne471:0"
+
+#: CalcPvAutonome.php:819
+msgid "Data from photovoltaic geographical information system (<a href=\"http://re.jrc.ec.europa.eu/pvgis.html\" target=\"_blank\">PVGIS</a>) application "
+msgstr "crwdns472:0crwdne472:0"
+
+#: CalcPvAutonome.php:821
+msgid "Power production estimate for off-grid PV system"
+msgstr "crwdns473:0crwdne473:0"
+
+#: CalcPvAutonome.php:837
+msgid "Average energy production per day"
+msgstr "crwdns474:0crwdne474:0"
+
+#: CalcPvAutonome.php:837 CalcPvAutonome.php:850 CalcPvAutonome.php:1156
+msgid "Wh/d"
+msgstr "crwdns475:0crwdne475:0"
+
+#: CalcPvAutonome.php:850
+msgid "Average energy not captured per day"
+msgstr "crwdns476:0crwdne476:0"
+
+#: CalcPvAutonome.php:876
+msgid "Battery performance for off-grid PV system"
+msgstr "crwdns477:0crwdne477:0"
+
+#: CalcPvAutonome.php:892
+msgid "Percentage of days when battery became full"
+msgstr "crwdns478:0crwdne478:0"
+
+#: CalcPvAutonome.php:903
+msgid "Percentage of days when battery became empty"
+msgstr "crwdns479:0crwdne479:0"
+
+#: CalcPvAutonome.php:927
+msgid "Probability of battery charge state at the end of the day"
+msgstr "crwdns480:0crwdne480:0"
+
+#: CalcPvAutonome.php:941
+msgid "Percentage of days with this charge state"
+msgstr "crwdns481:0crwdne481:0"
+
+#: CalcPvAutonome.php:985
+msgid "Budget"
+msgstr "crwdns482:0crwdne482:0"
+
+#: CalcPvAutonome.php:986
+msgid "This is an approximate estimation for new equipment, it can't be considered as a quote."
+msgstr "crwdns483:0crwdne483:0"
+
+#: CalcPvAutonome.php:991 CalcPvAutonome.php:1000 CalcPvAutonome.php:1012
+#: CalcPvAutonome.php:1026
+#, php-format
+msgid "between"
+msgstr "crwdns484:0crwdne484:0"
+
+#: CalcPvAutonome.php:991 CalcPvAutonome.php:1000 CalcPvAutonome.php:1012
+#: CalcPvAutonome.php:1026
+#, php-format
+msgid "and"
+msgstr "crwdns485:0crwdne485:0"
+
+#: CalcPvAutonome.php:992
+#, php-format
+msgid "Estimated cost %s&euro;/W at low range cost and %s&euro;/W at high range cost"
+msgstr "crwdns890:0%scrwdnd890:0%scrwdne890:0"
+
+#: CalcPvAutonome.php:1004
+msgid "sorry, no hypothesis for charge controller"
+msgstr "crwdns487:0crwdne487:0"
+
+#: CalcPvAutonome.php:1007 CalcPvAutonome.php:1029 CalcPvAutonome.php:1030
+msgid "approximately"
+msgstr "crwdns488:0crwdne488:0"
+
+#: CalcPvAutonome.php:1013
+#, php-format
+msgid "Estimated cost %s&euro;/string at low range cost and %s&euro;/string at high range cost"
+msgstr "crwdns902:0%scrwdnd902:0%scrwdne902:0"
+
+#: CalcPvAutonome.php:1027
+#, php-format
+msgid "Estimated cost %s&euro;/VA at low range cost and %s&euro;/VA at high range cost"
+msgstr "crwdns489:0%scrwdnd489:0%scrwdne489:0"
+
+#: CalcPvAutonome.php:1030 CalcPvAutonome.php:1501
+msgid "Wiring"
+msgstr "crwdns490:0crwdne490:0"
+
+#: CalcPvAutonome.php:1034
+#, php-format
+msgid "Which brings to a total budget <b>between %s and %s&euro;</b>. Cost of panels support, wire, wire terminal and protection elements (fuse, battery cut-off, ...) is not included"
+msgstr "crwdns491:0%scrwdnd491:0%scrwdne491:0"
+
+#: CalcPvAutonome.php:1036 CalcPvAutonome.php:1527
+#, php-format
+msgid "Support, contribute"
+msgstr "crwdns492:0crwdne492:0"
+
+#: CalcPvAutonome.php:1037
+#, php-format
+msgid "If this software was helpfull and/or you want to thank"
+msgstr "crwdns493:0crwdne493:0"
+
+#: CalcPvAutonome.php:1039
+#, php-format
+msgid "<a href=\"http://david.mercereau.info/contact/\"  target=\"_blank\">Say thank you !</a> (it's always a pleasure)"
+msgstr "crwdns494:0crwdne494:0"
+
+#: CalcPvAutonome.php:1040
+#, php-format
+msgid "Support by making a secure donation"
+msgstr "crwdns495:0crwdne495:0"
+
+#: CalcPvAutonome.php:1041
+#, php-format
+msgid "Contribute / improve / translate this software"
+msgstr "crwdns496:0crwdne496:0"
+
+#: CalcPvAutonome.php:1045
+#, php-format
+msgid "Summary"
+msgstr "crwdns497:0crwdne497:0"
+
+#: CalcPvAutonome.php:1046
+#, php-format
+msgid "<a href=\"%s\">This simulation</a> estimates that with your consumption of %dWh/d you would need:"
+msgstr "crwdns498:0%scrwdnd498:0%dcrwdne498:0"
+
+#: CalcPvAutonome.php:1047 CalcPvAutonome.php:1052
+#, php-format
+msgid "~%dW panel (%d\"%dW for example)"
+msgstr "crwdns499:0%dcrwdnd499:0%dcrwdnd499:0%dcrwdne499:0"
+
+#: CalcPvAutonome.php:1048 CalcPvAutonome.php:1053
+#, php-format
+msgid "~%dAh battery in %dV (%d\"%dAh in %dV for example)"
+msgstr "crwdns889:0%dcrwdnd889:0%dcrwdnd889:0%dcrwdnd889:0%dcrwdnd889:0%dcrwdne889:0"
+
+#: CalcPvAutonome.php:1050 CalcPvAutonome.php:1054
+#, php-format
+msgid "The budget estimated between %s and %s&euro;"
+msgstr "crwdns501:0%scrwdnd501:0%scrwdne501:0"
+
+#: CalcPvAutonome.php:1051
+#, php-format
+msgid "[url=%s]This simulation[url] estimates that with your consumption of %dWh/d you would need:"
+msgstr "crwdns502:0%scrwdnd502:0[url]crwdnd502:0%dcrwdne502:0"
+
+#: CalcPvAutonome.php:1136
+msgid "Your degree of knowledge in photovoltaics"
+msgstr "crwdns503:0crwdne503:0"
+
+#: CalcPvAutonome.php:1138
+msgid "Beginner"
+msgstr "crwdns504:0crwdne504:0"
+
+#: CalcPvAutonome.php:1139
+msgid "Enlightened"
+msgstr "crwdns505:0crwdne505:0"
+
+#: CalcPvAutonome.php:1140
+msgid "Expert"
+msgstr "crwdns506:0crwdne506:0"
+
+#: CalcPvAutonome.php:1150
+msgid "Your consumption"
+msgstr "crwdns507:0crwdne507:0"
+
+#: CalcPvAutonome.php:1152
+msgid "This is the most important step for sizing."
+msgstr "crwdns508:0crwdne508:0"
+
+#: CalcPvAutonome.php:1152
+#, php-format
+msgid "If you don't know this value go to <b><a href=\"%s?from=CalcPvAutonome\" id=\"DemandeCalcPvAutonome\">daily needs calculator</a></b>"
+msgstr "crwdns509:0%scrwdne509:0"
+
+#: CalcPvAutonome.php:1176
+msgid "Geographical location"
+msgstr "crwdns510:0crwdne510:0"
+
+#: CalcPvAutonome.php:1179
+msgid "Map"
+msgstr "crwdns511:0crwdne511:0"
+
+#: CalcPvAutonome.php:1180
+msgid "Manual"
+msgstr "crwdns512:0crwdne512:0"
+
+#: CalcPvAutonome.php:1185
+msgid "Click on the map to set your position and deduce solar ressource"
+msgstr "crwdns513:0crwdne513:0"
+
+#: CalcPvAutonome.php:1226
+msgid "Selected position"
+msgstr "crwdns514:0crwdne514:0"
+
+#: CalcPvAutonome.php:1247
+msgid "Latitude"
+msgstr "crwdns515:0crwdne515:0"
+
+#: CalcPvAutonome.php:1249
+msgid "Longitude"
+msgstr "crwdns516:0crwdne516:0"
+
+#: CalcPvAutonome.php:1252
+msgid "Solar irradiation data is collected on <a href=\"http://re.jrc.ec.europa.eu/PVGIS5-release.html\" target=\"_blank\"> PVGIS </a>"
+msgstr "crwdns517:0crwdne517:0"
+
+#: CalcPvAutonome.php:1256
+msgid "Enter the mid value of solar radiation for the worst month and panel plane (inclination)"
+msgstr "crwdns518:0crwdne518:0"
+
+#: CalcPvAutonome.php:1272
+msgid "Sizing of photovoltaic panels"
+msgstr "crwdns519:0crwdne519:0"
+
+#: CalcPvAutonome.php:1283
+msgid "Incline of the panel"
+msgstr "crwdns520:0crwdne520:0"
+
+#: CalcPvAutonome.php:1289
+msgid "Orientation of the panels"
+msgstr "crwdns521:0crwdne521:0"
+
+#: CalcPvAutonome.php:1294
+msgid "I use a solar tracker on the 2 axes"
+msgstr "crwdns522:0crwdne522:0"
+
+#: CalcPvAutonome.php:1297
+msgid "Desired autonomous"
+msgstr "crwdns523:0crwdne523:0"
+
+#: CalcPvAutonome.php:1299
+msgid "Annual / complete"
+msgstr "crwdns524:0crwdne524:0"
+
+#: CalcPvAutonome.php:1300
+msgid "Seasonal / partial"
+msgstr "crwdns525:0crwdne525:0"
+
+#: CalcPvAutonome.php:1303
+msgid "Select period"
+msgstr "crwdns526:0crwdne526:0"
+
+#: CalcPvAutonome.php:1328
+msgid "Panel template"
+msgstr "crwdns527:0crwdne527:0"
+
+#: CalcPvAutonome.php:1330 CalcPvAutonome.php:1403 CalcPvAutonome.php:1458
+msgid "Automatic"
+msgstr "crwdns528:0crwdne528:0"
+
+#: CalcPvAutonome.php:1331 CalcPvAutonome.php:1404 CalcPvAutonome.php:1459
+msgid "Customize"
+msgstr "crwdns529:0crwdne529:0"
+
+#: CalcPvAutonome.php:1343
+msgid "Preferred panel technology"
+msgstr "crwdns530:0crwdne530:0"
+
+#: CalcPvAutonome.php:1351
+msgid "You can detail the technical specifications of your panel"
+msgstr "crwdns531:0crwdne531:0"
+
+#: CalcPvAutonome.php:1354 Modeles.php:9
+msgid "Max power (Pmax)"
+msgstr "crwdns532:0crwdne532:0"
+
+#: CalcPvAutonome.php:1358 Modeles.php:10
+msgid "Open circuit voltage (Voc)"
+msgstr "crwdns533:0crwdne533:0"
+
+#: CalcPvAutonome.php:1362 Modeles.php:11
+msgid "Short-circuit current (Isc)"
+msgstr "crwdns534:0crwdne534:0"
+
+#: CalcPvAutonome.php:1369
+msgid "Electrical yield of batteries"
+msgstr "crwdns535:0crwdne535:0"
+
+#: CalcPvAutonome.php:1373
+msgid "Electrical yield for the remaining installation (charge controller,...)"
+msgstr "crwdns536:0crwdne536:0"
+
+#: CalcPvAutonome.php:1381
+msgid "Battery plant sizing"
+msgstr "crwdns537:0crwdne537:0"
+
+#: CalcPvAutonome.php:1382
+msgid "This software is preset for lead batteries"
+msgstr "crwdns538:0crwdne538:0"
+
+#: CalcPvAutonome.php:1384
+msgid "Autonomous days amount"
+msgstr "crwdns539:0crwdne539:0"
+
+#: CalcPvAutonome.php:1397
+msgid "Discharge level limit"
+msgstr "crwdns540:0crwdne540:0"
+
+#: CalcPvAutonome.php:1401
+msgid "Battery model"
+msgstr "crwdns541:0crwdne541:0"
+
+#: CalcPvAutonome.php:1401
+msgid "(<a href=\"http://www.batterie-solaire.com/batterie-delestage-electrique.htm\" target=\"_blank\">expressed in C10</a>)"
+msgstr "crwdns542:0crwdne542:0"
+
+#: CalcPvAutonome.php:1413
+msgid "In automatic mode, GEL OPzV 2V batteries will be used above 500A"
+msgstr "crwdns543:0crwdne543:0"
+
+#: CalcPvAutonome.php:1416
+msgid "Preferred battery technology"
+msgstr "crwdns544:0crwdne544:0"
+
+#: CalcPvAutonome.php:1426
+msgid "You can detail the technical characteristics of your battery"
+msgstr "crwdns545:0crwdne545:0"
+
+#: CalcPvAutonome.php:1429 Modeles.php:29
+msgid "Capacity (C10)"
+msgstr "crwdns546:0crwdne546:0"
+
+#: CalcPvAutonome.php:1433 Modeles.php:30
+msgid "Voltage"
+msgstr "crwdns547:0crwdne547:0"
+
+#: CalcPvAutonome.php:1444
+msgid "Charge current max capacity"
+msgstr "crwdns548:0crwdne548:0"
+
+#: CalcPvAutonome.php:1448
+msgid "Discharge current max capacity"
+msgstr "crwdns549:0crwdne549:0"
+
+#: CalcPvAutonome.php:1456
+msgid "Charge controller model"
+msgstr "crwdns550:0crwdne550:0"
+
+#: CalcPvAutonome.php:1475
+msgid "You can detail the technical characteristics of your charge controller"
+msgstr "crwdns551:0crwdne551:0"
+
+#: CalcPvAutonome.php:1478
+msgid "Batteries final voltage"
+msgstr "crwdns552:0crwdne552:0"
+
+#: CalcPvAutonome.php:1478
+msgid "This value can be changed in 'battery plant sizing'"
+msgstr "crwdns553:0crwdne553:0"
+
+#: CalcPvAutonome.php:1485
+msgid "Open circuit max PV voltage"
+msgstr "crwdns554:0crwdne554:0"
+
+#: CalcPvAutonome.php:1489
+msgid "PV current max. (power / voltage)"
+msgstr "crwdns555:0crwdne555:0"
+
+#: CalcPvAutonome.php:1495
+msgid "Panels Icc short-circuit current security margin"
+msgstr "crwdns556:0crwdne556:0"
+
+#: CalcPvAutonome.php:1502
+msgid "Considering solar flexible copper wiring"
+msgstr "crwdns557:0crwdne557:0"
+
+#: CalcPvAutonome.php:1504
+msgid "One-way distance between panels and charge controller"
+msgstr "crwdns558:0crwdne558:0"
+
+#: CalcPvAutonome.php:1508
+msgid "One-way distance between charge controller and batteries"
+msgstr "crwdns559:0crwdne559:0"
+
+#: CalcPvAutonome.php:1512
+msgid "Conductor resistivity (rho) mm&sup2;/m"
+msgstr "crwdns560:0crwdne560:0"
+
+#: CalcPvAutonome.php:1516
+msgid "Tolerable voltage drop"
+msgstr "crwdns561:0crwdne561:0"
+
+#: CalcPvAutonome.php:1520
+msgid "Ratio in order to prevent wire heating"
+msgstr "crwdns562:0crwdne562:0"
+
+#: CalcPvAutonome.php:1526
+msgid "Reset"
+msgstr "crwdns563:0crwdne563:0"
+
+#: CalcPvAutonome.php:1528
+msgid "Start the calculation"
+msgstr "crwdns565:0crwdne565:0"
+
+#: CalcPvAutonome.php:1541
+msgid "Support CaclPvAutonome"
+msgstr "crwdns891:0crwdne891:0"
+
+#: CalcPvAutonome.php:1542
+msgid "This software is <b>open</b>, <b>free</b>, collaborative and <b>independent</b> financially. <b>So that he can stay, we need your support</b>."
+msgstr "crwdns892:0crwdne892:0"
+
+#: CalcPvAutonome.php:1543
+msgid "To help us, you can also <a href=\"https://framagit.org/kepon/CalcPvAutonome\" target=\"_blank\">contribute to its improvement</a>, its <a href=\"https://crwd.in/calcpvautonome\" target=\"_blank\">translation</a>."
+msgstr "crwdns893:0crwdne893:0"
+
+#: CalcPvAutonome.php:1544
+msgid "I want to make a secure one-time donation with Paypal"
+msgstr "crwdns894:0crwdne894:0"
+
+#: CalcPvAutonome.php:1545
+msgid "I want to make a recurring, free and secure donation with Liberapay"
+msgstr "crwdns895:0crwdne895:0"
+
+#: CalcPvAutonome.php:1546
+msgid "No thanks, I just want to <b>start the calculation</b>"
+msgstr "crwdns896:0crwdne896:0"
+
+#: CalcPvAutonome.php:1547
+msgid "I already support CalcPvAutonomous"
+msgstr "crwdns897:0crwdne897:0"
+
+#: index.php:87 index.php:142
+msgid "Calculate/size photovoltaic stand-alone (autonomous) set"
+msgstr "crwdns905:0crwdne905:0"
+
+#: index.php:133
+msgid "Calculate daily electric needs"
+msgstr "crwdns906:0crwdne906:0"
+
+#: index.php:135 index.php:144 index.php:166
+msgid "<p>Go to the <a href=\"https://crwd.in/calcpvautonome\" target=\"_blank\">colaborative translation platform</a> to help us translate this free software.</p>"
+msgstr "crwdns898:0crwdne898:0"
+
+#: index.php:152
+msgid "Thanks to"
+msgstr "crwdns568:0crwdne568:0"
+
+#: index.php:164
+msgid "for this <a target=\"_blank\" href=\"https://crwd.in/calcpvautonome\">translation</a>"
+msgstr "crwdns899:0crwdne899:0"
+
+#: index.php:167
+msgid "By"
+msgstr "crwdns570:0crwdne570:0"
+
+#: index.php:167
+msgid "Git repository"
+msgstr "crwdns571:0crwdne571:0"
+
+#: index.php:168
+msgid "version"
+msgstr "crwdns572:0crwdne572:0"
+
+#: index.php:168
+msgid "is an open software licensed <a href=\"https://en.wikipedia.org/wiki/Beerware\">Beerware</a>"
+msgstr "crwdns573:0crwdne573:0"
+
+#: Modeles.php:8 Modeles.php:28
+msgid "Type"
+msgstr "crwdns574:0crwdne574:0"
+
+#: Modeles.php:12 Modeles.php:31 Modeles.php:51 Modeles.php:70 Modeles.php:86
+msgid "Estimate price"
+msgstr "crwdns575:0crwdne575:0"
+
+#: Modeles.php:27 Modeles.php:46 Modeles.php:66
+msgid "Name"
+msgstr "crwdns576:0crwdne576:0"
+
+#: Modeles.php:47
+msgid "Battery plant voltage"
+msgstr "crwdns577:0crwdne577:0"
+
+#: Modeles.php:48
+msgid "Max panel power"
+msgstr "crwdns578:0crwdne578:0"
+
+#: Modeles.php:49
+msgid "Max panel voltage"
+msgstr "crwdns579:0crwdne579:0"
+
+#: Modeles.php:50
+msgid "Max panel current"
+msgstr "crwdns580:0crwdne580:0"
+
+#: Modeles.php:67
+msgid "Battery park voltage"
+msgstr "crwdns581:0crwdne581:0"
+
+#: Modeles.php:68
+msgid "Max power (at 25 °C)"
+msgstr "crwdns582:0crwdne582:0"
+
+#: Modeles.php:69
+msgid "Peak power"
+msgstr "crwdns583:0crwdne583:0"
+
+#: Modeles.php:85
+msgid "Section"
+msgstr "crwdns584:0crwdne584:0"
+

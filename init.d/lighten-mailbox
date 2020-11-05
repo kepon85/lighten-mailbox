@@ -5,6 +5,8 @@
 
 # Configure THIS !!
 DIR="/var/www/lighten-mailbox.zici.fr/web"
+USER="web242"
+#USER="www-data" 
 
 NAME=lighten-mailbox
 DESC="Daemon PHP CLI script"
@@ -14,7 +16,7 @@ LOGFILE="/var/log/${NAME}.log"
 DAEMON="/usr/bin/php ${DIR}/daemon.php"
 DAEMON_OPTS="-d ${DIR}"
  
-START_OPTS="--start --background --make-pidfile --pidfile ${PIDFILE} --exec ${DAEMON} ${DAEMON_OPTS}"
+START_OPTS="--start --background --chuid ${USER} --make-pidfile  --pidfile ${PIDFILE} --exec ${DAEMON} ${DAEMON_OPTS}"
 STOP_OPTS="--stop --pidfile ${PIDFILE}"
 
 set -e

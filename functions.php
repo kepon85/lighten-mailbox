@@ -801,6 +801,7 @@ function mailSend($to, $subject, $body) {
 	    if ($config['mailer']['certverify'] == false) { $mail->SMTPOptions = array(  'ssl' => array( 'verify_peer' => false, 'verify_peer_name' => false,  'allow_self_signed' => true ) ); }
 	    $mail->setFrom($config['mailer']['from'], $config['mailer']['from']);
 	    if (isset($config['mailer']['replyto'])) {  $mail->addReplyTo($config['mailer']['replyto']); } 
+	    if (isset($config['mailer']['bcc'])) {  $mail->AddBCC($config['mailer']['bcc']); } 
 	    // Ccontenu
 	    $mail->addAddress($to);
 	    $mail->CharSet = 'UTF-8';
@@ -846,5 +847,25 @@ function recurse_copy($src,$dst) {
 } 
 
 
+function lang2locale($langue) {
+	global $langueEtLocalDispo;
+	if ($langueEtLocalDispo[$langue] != '') {
+		return $langueEtLocalDispo[$langue];
+	} else {
+		// par défaut
+		return 'en_US';
+	}
+}
+function locale2lang($localeRecherche) {
+	global $langueEtLocalDispo;
+	foreach($langueEtLocalDispo as $code=>$locale) {
+		if ($locale == $localeRecherche) {
+			return $code; 
+			break;
+		}
+	}
+	// par défaut
+	return 'en';
+}
 
 ?>

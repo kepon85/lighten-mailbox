@@ -44,6 +44,9 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
             display: none;
             color: #FF5050;
         }
+        .imapwarning  a {
+            text-decoration: underline;
+        }
         .form-group.imapAutoDetect {
             display: none;
         }
@@ -60,6 +63,9 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
         .imapTestCon{
             text-align: center;
             display: none;
+        }
+        .imapTestCon.success{
+            color: #317c1d;
         }
         .imap-password {
             display: none;
@@ -82,6 +88,22 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
         .overQuota {
             display: none;
             color: #FF5050;
+            font-weight: bold;
+        }
+        .logo {
+            font-weight: 700;
+            font-size: 200%;
+        }
+        .navbar-header{
+            padding: 20px;
+        }
+        .nav.navbar-nav.navbar-right li {
+            padding-left: 15px;
+        }
+        .footer {
+            background-color: rgba(255, 255, 255, 0.8);
+            margin-top: 60px;
+            padding: 20px;
         }
     </style>
 </head>
@@ -92,29 +114,31 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
 		<nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="index.html">BootZard - Bootstrap Wizard Template</a>
+					<a class="logo" href="/"><?= $config['title'] ?></a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="top-navbar-1">
 					<ul class="nav navbar-nav navbar-right">
+                            <?php
+                            foreach($langueEtLocalDispo as $langShort=>$lang) {
+                                $flag='';
+                                if ($localeshort == $langShort) {
+                                    $flag=' drapeauActif';
+                                }
+                                echo '<li><span class="li-text"><a id="href'.$langShort.'" href="?langueChange='.$langShort.'"><img class="drapeau'.$flag.'" src="'.$config['baseUrl'].'assets/img/'.$langShort.'.png" alt="'.$langShort.'" width="23" height="15" /></a></span></li>';
+                            }
+                            ?>
 						<li>
-							<span class="li-text">
-								Put some text or
-							</span> 
-							<a href="#"><strong>links</strong></a> 
-							<span class="li-text">
-								here, or some icons: 
-							</span> 
-							<span class="li-social">
-								<a href="https://github.com/AZMIND" target="_blank"><i class="fa fa-github"></i></a>
-							</span>
-						</li>
+                            <span class="li-social">
+                                <a href="https://framagit.org/kepon/lighten-mailbox/" target="_blank"><i class="fa fa-gitlab"></i></a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="li-social">
+                                <a href="https://github.com/kepon85/lighten-mailbox" target="_blank"><i class="fa fa-github"></i></a>
+                            </span>
+                        </li>
+
 					</ul>
 				</div>
 			</div>
@@ -155,7 +179,7 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
                                 toLog(1, "SELECT session, error : ".$e->getMessage(), 0);
                             }
                             $sessionFetch = $session->fetch();
-                            printf(_('<h4>Status of your request [%d]</h4>'), $_GET['session_id']);
+                            printf('<h4>'._('Status of your request [%d]').'</h4>', $_GET['session_id']);
                             printf('<p>'._('For %s on %s').'</p>', myDecrypt($sessionFetch['user']), $sessionFetch['domain']);
                             // echo
                             if (count($sessionFetch) == 1) {
@@ -231,6 +255,12 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
                             }
 
 
+                        } else if (isset($_GET['page'])) {
+                            if (is_file('page/'.$_GET['page'].'.html')) {
+                                include('page/'.$_GET['page'].'.html');
+                            } else {
+                                echo "404 Not Found";
+                            }
                         } else { ?>
                         
                         
@@ -262,7 +292,7 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
                                     <option value="3"><?= _('Expert') ?></option>
                                 </select>
 
-                                <label for="f1-what"><?= _('What do you want to do ?') ?> (<a><?= _('archive example') ?></a>) </label>
+                                <label for="f1-what" class="f1-what"><?= _('What do you want to do ?') ?> (<a href="https://lighten-mailbox.zici.fr/archive/example/" target="_blank"><?= _('archive example') ?></a>) </label>
                                 <select id="f1-what" class="f1-what form-control"  name="f1-what">
                                     <option value="1" selected="selected"><?= _('Archive (download these emails) then delete') ?></option>
                                     <option value="2"><?= _('Archive (download these emails)') ?></option>
@@ -279,12 +309,12 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
                                     <p><?= _('Select emails') ?></p>
                                     <span><?= _('From') ?></span>
                                     <input type="date" id="f1-dateStart" name="f1-dateStart"
-                                           value="<?= date('Y-m-d', strtotime('-1 year')) ?>"
+                                           value="<?= date('Y-m-d', strtotime('-2 year')) ?>"
                                            min="1990-01-01" max="<?= date('Y-m-d', strtotime('-1 day')) ?>">
                                     
                                     <span><?= _('To') ?></span>
                                     <input type="date" id="f1-dateEnd" name="f1-dateEnd"
-                                           value="<?= date('Y-m-d') ?>"
+                                           value="<?= date('Y-m-d', strtotime('-1 year')) ?>"
                                            min="1990-01-02" max="<?= date('Y-m-d', strtotime('+1 day')) ?>">
                                 </div>
 
@@ -307,9 +337,7 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
                             
                             <div class="imapwarning gmail">
                             <h4><?= _('Warning') ?> gmail.com :</h4>
-                            <p><?=_('Activer IMAP dans Gmail
-                             puis : https://myaccount.google.com/lesssecureapps
-                                https://support.google.com/accounts/answer/6010255?hl=en
+                            <p><?=_('Activate IMAP in your Gmail settings then <a target="_blank" href="https://myaccount.google.com/lesssecureapps">on this page</a> click on "Allow less secure applications" : enable  (<a  target="_blank"  href="https://support.google.com/accounts/answer/6010255?hl=en">source</a>)
                                 ')?></p></div>
                                 
                             <div class="form-group">
@@ -324,7 +352,7 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
                             </div>
                             <div class="f1-buttons">
                                 <input class="f1-cgu" type="checkbox" name="f1-cgu" id="f1-cgu">
-                                <label for="f1-cgu"><?= _('I accept the general terms of use') ?></label>
+                                <label for="f1-cgu"><a href="./cgu.html"><?= _('I accept the general terms of use') ?></a></label>
                                 <button type="button" class="btn btn-next"><?= _('Next') ?></button>
                             </div>
                         </fieldset>
@@ -358,6 +386,10 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
                                 <p><?= _('Contact your email provider for more information on your IMAP connection settings. Check if your password is correct.') ?></p>
                             </div>
 
+                            <div class="imapTestCon success">
+                                <p><?= _('The connection to your mailbox has been successful!') ?></p>
+                            </div>
+
                             <div class="form-group imap-form imap-detectAuto">
                                 <input class="btn" type="button" id="f1-detectAuto" value="<?= _('Automatically search for IMAP settings') ?>" />
                             </div>
@@ -376,7 +408,7 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
                             </div>
                             
                             <div class="form-group imap-form">
-                                <label class="" for="f1-server"><?= _('IMAP serveur') ?></label>
+                                <label class="" for="f1-server"><?= _('IMAP server') ?></label>
                                 <input type="text" name="f1-server" placeholder="ex: imap.provider.com" class="f1-server form-control imap-config" id="f1-server">
 
                                 <label class="" for="f1-port"><?= _('IMAP port') ?></label>
@@ -395,7 +427,7 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
                                 </select>
                                 <p><input type="checkbox" id="f1-cert" checked="checked" class="imap-config" />
                                 <label for="f1-cert"><?= _('Validate the certificate') ?> : </label></p>
-                                <label for="f1-auth"><?= _('Méthode d\'authentification') ?> : </label>
+                                <label for="f1-auth"><?= _('Authentication method') ?> : </label>
                                 <select id="f1-auth" class="f1-ssl form-control imap-config"  name="f1-auth">
                                         <option value="0"><?= _('Normal') ?></option>
                                         <option value="1" selected="selected"><?= _('Encrypt') ?></option>
@@ -423,12 +455,14 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
                         <fieldset>
                             <h4><?= _('Validation') ?><h4>
                             <div class="form-group">
+                                <p><?= _('Here is an overview of the impact of your request:') ?></p>
                                 <table id="folderPreviewList">
                                     <tr>
                                         <th><?= _('Folder name') ?></th><th><?= _('Number of emails selected') ?></th><th><?= _('Selected email sizes') ?></th>
                                     </tr>
                                 </table>
                             </div>
+                            <div class="overQuota"><?= _('Over quota : Your archive exceeds the allowed quota size. A tip: reduce the time range (just 1 years, 6 months ...)') ?></div>
                             <div class="validation-result">
                                 <p><?= _('Here we go !') ?></p>
                                 <p><?= _('You can follow the progress of your request by the address: ') ?> <span id="spoolUrl"></span></p>
@@ -445,6 +479,12 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
                      <?php } ?>
                     </form>
                 </div>
+
+
+                <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 footer">
+                    Lighten-mailbox v<?= VERSION ?> - By <a href="https://david.mercereau.info">David Mercereau</a> - Licence : <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.fr"><img src="assets/img/CC-Zero-badge.svg" width="100" alt="Créative Common Zero" /></a> - <a href="https://framagit.org/kepon/lighten-mailbox/">Sources</a>
+                </div>
+
             </div>
                 
         </div>
@@ -475,7 +515,6 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
             } else {
                 $('.f1-format').show();
             }
-            
         });
         // On recopie 
         $('#f1-password-first').on('change',function(){
