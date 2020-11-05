@@ -49,6 +49,21 @@ Editer el fichier config.yaml et paramétrer ce dont vous avez besoin, notaement
 
 Pour le daemon, le script ini.d se trouve dans *init.d/lighten-mailbox*
 
+## Changelog
+
+* Futur :
+  * BUG index.html si eml masque lien des archives !
+  * MAX usage... par IP et/ou cookies... ? (pour éviter que le service ne soit détourné)
+  * Estimer temps/durée  (avant validation)
+  * Prévenir de "combien de personne avant vous" avant validation et combien de temps ça va prendre (estimation possible avec le size de tout les spooler en cours + config débit download)
+  * Mot de passe personnalisé sur archive (pour l'instant on met le mot de passe mail)
+  * Tabulator : 
+    * Faire meilleur recherche (avec OU / ET...  (plusieurs champs quoi)
+    * recherche dans toutes les colonnes
+    * transformer en PDF jsPDF http://tabulator.info/docs/4.5/download#pdf
+    * imprimer
+  * Multi serveur ?
+
 ## Licence 
 
 By [David Mercereau](https://david.mercereau.info)  Licence : [![Créative Common Zero](https://lighten-mailbox.zici.fr/assets/img/CC-Zero-badge.svg)](https://creativecommons.org/publicdomain/zero/1.0/deed.fr) 

@@ -166,7 +166,10 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
                 <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box">
                     <form role="form" action="" method="post" class="f1">
                         <h3><?= _('Lighten your mailbox') ?></h3>
-                        <?php if (isset($_GET['session_id'])) { 
+                        <?php 
+                        if ($config['maintenance']['active'] == true && $_SERVER["REMOTE_ADDR"] != $config['maintenance']['ipForTest']) {
+                            echo '<p>'.$config['maintenance']['publicMsg'].'</p>';
+                        } elseif (isset($_GET['session_id'])) { 
                             
                             try {
                                 $session = $db->prepare("SELECT session.user, session.domain, session.what
@@ -352,7 +355,7 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
                             </div>
                             <div class="f1-buttons">
                                 <input class="f1-cgu" type="checkbox" name="f1-cgu" id="f1-cgu">
-                                <label for="f1-cgu"><a href="./cgu.html"><?= _('I accept the general terms of use') ?></a></label>
+                                <label for="f1-cgu"><a href="./cgu.html" target="_blank"><?= _('I accept the general terms of use') ?></a></label>
                                 <button type="button" class="btn btn-next"><?= _('Next') ?></button>
                             </div>
                         </fieldset>

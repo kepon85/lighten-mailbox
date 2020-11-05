@@ -6,6 +6,13 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+function cleanTxt($char) {
+	return preg_replace(
+			"([^a-zA-Z0-9@-])", 
+			'', 
+			$char
+		);    
+}
 function splitEmailAddress($email){
 	$split = explode('@', $email);
 	$arr['user']=$split[0];
@@ -276,9 +283,8 @@ function imapAutoDetect($session_id, $user, $domain, $password) {
     return $imapConnexion;
 }
 
-function jsonMessage($mod, $parser, $header, $messageEML, $folder, $format) {
-	// Id sans les < > du début et de la fin
-	$idClean=substr(substr($header->message_id, 0, -1), 1);
+function jsonMessage($mod, $idClean, $parser, $header, $messageEML, $folder, $format) {
+
 	// Enregistrement du json
 	$arrayTmp['filename']=$idClean;
 	$arrayTmp['message_id']='';
@@ -389,10 +395,8 @@ function jsonMessage($mod, $parser, $header, $messageEML, $folder, $format) {
 	unset($arrayTmp);
 }
 
-function saveMessage($session_id, $parser, $header, $messageEML, $folder, $format, $mod) {
+function saveMessage($session_id, $idClean, $parser, $header, $messageEML, $folder, $format, $mod) {
 	global $config;
-	// Id sans les < > du début et de la fin
-	$idClean=substr(substr($header->message_id, 0, -1), 1);
 	toLog(5, "idClean : ".$idClean);
 	// Gestion des pièces jointes :
 
@@ -540,8 +544,15 @@ function imapGetData($mod, $session_id, $server, $port, $user, $password, $secur
 							//~ if ($mod != 'preview') {
 								//~ array_push($dataJson, jsonMessage($mod, $parser, $header, $messageEML, $folder, $format));
 							//~ } else {
-							array_push($dataJson, jsonMessage($mod, $parser, $header, $messageEML, $folder, $format));
-							saveMessage($session_id, $parser, $header, $messageEML, $folder, $format, $mod);			
+							
+							// Bug des messages sans id, on en génère un 
+							if (empty($header->message_id)) {
+								$idClean=rand(1000, mt_getrandmax()).rand(1000, mt_getrandmax()).rand(1000, mt_getrandmax());
+							} else {
+								$idClean=cleanTxt(substr(substr($header->message_id, 0, -1), 1));
+							}
+							array_push($dataJson, jsonMessage($mod, $idClean, $parser, $header, $messageEML, $folder, $format));
+							saveMessage($session_id, $idClean, $parser, $header, $messageEML, $folder, $format, $mod);			
 						}
 				    }
 			    }
@@ -557,8 +568,13 @@ function imapGetData($mod, $session_id, $server, $port, $user, $password, $secur
 		    }
 		    if ($mod != 'preview') {
 		    	toLog(4, "Enregistrement json/js messages");
-				file_put_contents($config['dir'][$mod].'/'.$session_id.'/messages.json', json_encode($dataJson, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-				file_put_contents($config['dir'][$mod].'/'.$session_id.'/messages.js', 'var messages_json = '.json_encode($dataJson, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE).';');
+		    	if (count($dataJson) > 0) {
+					file_put_contents($config['dir'][$mod].'/'.$session_id.'/messages.json', json_encode($dataJson, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_IGNORE));
+					file_put_contents($config['dir'][$mod].'/'.$session_id.'/messages.js', 'var messages_json = '.json_encode($dataJson, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_IGNORE).';');
+					if (json_last_error() != 0) {
+						toLog(1, "Erreur dans le json : ".json_last_error());
+					}
+				}
 			}
 	    }
 	    $return['totalSize']=$totalSize;
@@ -802,8 +818,12 @@ function mailSend($to, $subject, $body) {
 	    $mail->setFrom($config['mailer']['from'], $config['mailer']['from']);
 	    if (isset($config['mailer']['replyto'])) {  $mail->addReplyTo($config['mailer']['replyto']); } 
 	    if (isset($config['mailer']['bcc'])) {  $mail->AddBCC($config['mailer']['bcc']); } 
-	    // Ccontenu
-	    $mail->addAddress($to);
+	    if ($config['maintenance']['active'] == true) {
+	    	$mail->addAddress($config['maintenance']['emailForTest']);
+	    } else {
+	    	$mail->addAddress($to);
+	    }
+	    // Contenu
 	    $mail->CharSet = 'UTF-8';
 	    $mail->isHTML(true);
 	    $mail->Subject = $config['mailer']['subjectprefix'].' '.$subject;

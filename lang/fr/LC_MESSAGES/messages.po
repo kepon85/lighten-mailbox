@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-05 11:38+0100\n"
-"PO-Revision-Date: 2020-11-05 11:44+0100\n"
+"PO-Revision-Date: 2020-11-05 15:15+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -208,7 +208,7 @@ msgstr "De"
 
 #: index.php:315
 msgid "To"
-msgstr "A"
+msgstr "au"
 
 #: index.php:322
 msgid "The emails that can be found"
@@ -377,7 +377,7 @@ msgstr "Nombre d'e-mails sélectionnés"
 
 #: index.php:461
 msgid "Selected email sizes"
-msgstr "Tailles d'e-mail sélectionnées"
+msgstr "Taille d'e-mail sélectionnés"
 
 #: index.php:465
 msgid "Over quota : Your archive exceeds the allowed quota size. A tip: reduce the time range (just 1 years, 6 months ...)"
