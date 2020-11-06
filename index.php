@@ -167,6 +167,10 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
                     <form role="form" action="" method="post" class="f1">
                         <h3><?= _('Lighten your mailbox') ?></h3>
                         <?php 
+                        if ($config['maintenance']['active'] == true && $_SERVER["REMOTE_ADDR"] == $config['maintenance']['ipForTest']) {
+                            echo '<p style="color: red">Maintenance mode ON</p>';
+                        }
+
                         if ($config['maintenance']['active'] == true && $_SERVER["REMOTE_ADDR"] != $config['maintenance']['ipForTest']) {
                             echo '<p>'.$config['maintenance']['publicMsg'].'</p>';
                         } elseif (isset($_GET['session_id'])) { 

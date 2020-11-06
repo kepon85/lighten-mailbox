@@ -188,30 +188,30 @@
 		switch (value) {
 			case 'msgno':
 			case 'size':
-			  table.addColumn({title:name, field:value, sorter:"number", align:"center", headerFilter:"number", headerContext:function(e, column){ column.delete(); $('#flagged').removeClass('inTable'); refreshTableControls(); }}, false);
+			  table.addColumn({title:name, field:value, sorter:"number", align:"center", headerFilter:"number", headerContext:function(e, column){ column.delete(); $('#' + value).removeClass('inTable'); refreshTableControls(); }}, false);
 			break;
 			case 'udate':
 			  table.addColumn({title:name, field:value, align:"center", formatter:"datetime", formatterParams:{
 				  inputFormat:"X",
 				  outputFormat:"DD/MM/YY HH:m",
 				  invalidPlaceholder:"(invalid date)",
-			  }, headerContext:function(e, column){ column.delete(); $('#flagged').removeClass('inTable'); refreshTableControls(); }}, false);
+			  }, headerContext:function(e, column){ column.delete(); $('#' + value).removeClass('inTable'); refreshTableControls(); }}, false);
 			break;
 			case 'date':
-			  table.addColumn({title:name, field:value, align:"center", headerFilter:dateFilterEditor, headerFilterFunc:dateFilterFunction, headerContext:function(e, column){ column.delete(); $('#flagged').removeClass('inTable'); refreshTableControls(); }}, false);
+			  table.addColumn({title:name, field:value, align:"center", headerFilter:dateFilterEditor, headerFilterFunc:dateFilterFunction, headerContext:function(e, column){ column.delete(); $('#' + value).removeClass('inTable'); refreshTableControls(); }}, false);
 			break;
 			case 'answered':
 			case 'flagged':
 			//case 'attachments':
-			  table.addColumn({title:name, field:value, align:"center", headerContext:function(e, column){ column.delete(); $('#flagged').removeClass('inTable'); refreshTableControls(); }, formatter:printIcon, headerFilter:"tickCross", headerFilterParams:{"tristate":true},headerFilterEmptyCheck:function(value){return value === null}}, false);
+			  table.addColumn({title:name, field:value, align:"center", headerContext:function(e, column){ column.delete(); $('#' + value).removeClass('inTable'); refreshTableControls(); }, formatter:printIcon, headerFilter:"tickCross", headerFilterParams:{"tristate":true},headerFilterEmptyCheck:function(value){return value === null}}, false);
 			break;
 			case 'subject':
-			  table.addColumn({title:name, field:value, width: 400, sorter:"string", headerFilter:"input", headerContext:function(e, column){ column.delete(); $('#flagged').removeClass('inTable'); refreshTableControls(); }, responsive:2}, false);
+			  table.addColumn({title:name, field:value, width: 400, sorter:"string", headerFilter:"input", headerContext:function(e, column){ column.delete(); $('#' + value).removeClass('inTable'); refreshTableControls(); }, responsive:2}, false);
 			case 'fromaddress':
-			  table.addColumn({title:name, field:value, width: 400, sorter:"string", headerFilter:"input", headerContext:function(e, column){ column.delete(); $('#flagged').removeClass('inTable'); refreshTableControls(); }}, false);
+			  table.addColumn({title:name, field:value, width: 400, sorter:"string", headerFilter:"input", headerContext:function(e, column){ column.delete(); $('#' + value).removeClass('inTable'); refreshTableControls(); }}, false);
 			break;
 			default:
-			  table.addColumn({title:name, field:value, sorter:"string", headerFilter:"input", headerContext:function(e, column){ column.delete(); $('#flagged').removeClass('inTable'); refreshTableControls(); }}, false);
+			  table.addColumn({title:name, field:value, sorter:"string", headerFilter:"input", headerContext:function(e, column){ column.delete(); $('#' + value).removeClass('inTable'); refreshTableControls(); }}, false);
 		}
 	}
 

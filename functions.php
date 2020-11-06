@@ -301,31 +301,31 @@ function jsonMessage($mod, $idClean, $parser, $header, $messageEML, $folder, $fo
 	}
 	$arrayTmp['senderaddress']='';
 	if (isset($header->senderaddress)) {
-		$arrayTmp['senderaddress']=$header->senderaddress;
+		$arrayTmp['senderaddress']=imap_utf8($header->senderaddress);
 	}
 	$arrayTmp['fromaddress']='';
 	if (isset($header->fromaddress)) {
-		$arrayTmp['fromaddress']=$header->fromaddress;
+		$arrayTmp['fromaddress']=imap_utf8($header->fromaddress);
 	}
 	$arrayTmp['toaddress']='';
 	if (isset($header->toaddress)) {
-		$arrayTmp['toaddress']=$header->toaddress;
+		$arrayTmp['toaddress']=imap_utf8($header->toaddress);
 	}
 	$arrayTmp['ccaddress']='';
 	if (isset($header->ccaddress)) {
-		$arrayTmp['ccaddress']=$header->ccaddress;
+		$arrayTmp['ccaddress']=imap_utf8($header->ccaddress);
 	}
 	$arrayTmp['bccaddress']='';
 	if (isset($header->bccaddress)) {
-		$arrayTmp['bccaddress']=$header->bccaddress;
+		$arrayTmp['bccaddress']=imap_utf8($header->bccaddress);
 	}
 	$arrayTmp['reply_toaddress']='';
 	if (isset($header->reply_toaddress)) {
-		$arrayTmp['reply_toaddress']=$header->reply_toaddress;
+		$arrayTmp['reply_toaddress']=imap_utf8($header->reply_toaddress);
 	}
 	$arrayTmp['return_pathaddress']='';
 	if (isset($header->return_pathaddress)) {
-		$arrayTmp['return_pathaddress']=$header->return_pathaddress;
+		$arrayTmp['return_pathaddress']=imap_utf8($header->return_pathaddress);
 	}
 	$arrayTmp['references']='';
 	if (isset($header->references)) {
@@ -333,7 +333,7 @@ function jsonMessage($mod, $idClean, $parser, $header, $messageEML, $folder, $fo
 	}
 	$arrayTmp['in_reply_to']='';
 	if (isset($header->in_reply_to)) {
-		$arrayTmp['in_reply_to']=$header->in_reply_to;
+		$arrayTmp['in_reply_to']=imap_utf8($header->in_reply_to);
 	}
 	$arrayTmp['msgno']='';
 	if (isset($header->Msgno)) {
@@ -422,29 +422,29 @@ function saveMessage($session_id, $idClean, $parser, $header, $messageEML, $fold
 			$headerHtml.='<p class="header">Date : '.$header->date.'</p>';
 		}
 		if (isset($header->senderaddress)) {
-			$headerTxt.='Sender : '.$header->senderaddress.'
+			$headerTxt.='Sender : '.imap_utf8($header->senderaddress).'
 ';
-			$headerHtml.='<p class="header">Sender : '.$header->senderaddress.'</p>';
+			$headerHtml.='<p class="header">Sender : '.imap_utf8($header->senderaddress).'</p>';
 		}
 		if (isset($header->fromaddress)) {
-			$headerTxt.='From : '.$header->fromaddress.'
+			$headerTxt.='From : '.imap_utf8($header->fromaddress).'
 ';
-			$headerHtml.='<p class="header">From : '.$header->fromaddress.'</p>';
+			$headerHtml.='<p class="header">From : '.imap_utf8($header->fromaddress).'</p>';
 		}
 		if (isset($header->toaddress)) {
-			$headerTxt.='To : '.$header->toaddress.'
+			$headerTxt.='To : '.imap_utf8($header->toaddress).'
 ';
-			$headerHtml.='<p class="header">To : '.$header->toaddress.'</p>';
+			$headerHtml.='<p class="header">To : '.imap_utf8($header->toaddress).'</p>';
 		}
 		if (isset($header->ccaddress)) {
-			$headerTxt.='Cc : '.$header->ccaddress.'
+			$headerTxt.='Cc : '.imap_utf8($header->ccaddress).'
 ';
-			$headerHtml.='<p class="header">Cc : '.$header->ccaddress.'</p>';
+			$headerHtml.='<p class="header">Cc : '.imap_utf8($header->ccaddress).'</p>';
 		}
 		if (isset($header->subject)) {
-			$headerTxt.='Bcc : '.imap_utf8($header->subject).'
+			$headerTxt.='Subject : '.imap_utf8($header->subject).'
 ';
-			$headerHtml.='<p class="header">Bcc : '.imap_utf8($header->subject).'</p>';
+			$headerHtml.='<p class="header">Subject : '.imap_utf8($header->subject).'</p>';
 		}
 		if (count($attachments) != 0) {
 			$headerTxt.='Attachments :';

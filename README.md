@@ -52,6 +52,7 @@ Pour le daemon, le script ini.d se trouve dans *init.d/lighten-mailbox*
 ## Changelog
 
 * Futur :
+  * Orientation "serveur dédier" limiter a une liste de @domaine et ou un serveur
   * BUG index.html si eml masque lien des archives !
   * MAX usage... par IP et/ou cookies... ? (pour éviter que le service ne soit détourné)
   * Estimer temps/durée  (avant validation)
