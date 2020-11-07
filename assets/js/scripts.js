@@ -94,10 +94,22 @@ function imapDetectConfig() {
 				}
 				// Les dossiers : 
 				data['folder'].forEach(function(item){
-					if ($('#f1-level').val() == 1 && $('#f1-folderBeginner').val() == 1) {
-						var regexSelected = /^INBOX$/;
+					if ($('#f1-level').val() == 1) {
+						if ($('#f1-folderBeginner').val() == 1) {
+							var regexSelected = /^INBOX$/;
+						} else {
+							if ($('#f1-server').val() == 'imap.gmail.com') {
+								var regexSelected = /Tous les messages$|All/;
+							} else {
+								var regexSelected = /^INBOX$|Sent$|Envoyés$/;
+							}
+						}
 					} else {
-						var regexSelected = /^INBOX$|Sent$/;
+						if ($('#f1-server').val() == 'imap.gmail.com') {
+							var regexSelected = /Tous les messages$|All/;
+						} else {
+							var regexSelected = /^INBOX$|Sent$|Envoyés$/;
+						}
 					}
 					$('#imapfolder').append('<ul>');
 					if (regexSelected.test(item)) {
@@ -432,10 +444,12 @@ jQuery(document).ready(function() {
 						if ($('#f1-level').val() != 3) {
 							$('.imap-form').hide();
 						}
-						// Remplissage du formulaire : 
-						//~ 
 						data['folder'].forEach(function(item){
-							var regexSelected = /^INBOX$|Sent$|Messages envoy/;
+							if ($('#f1-server').val() == 'imap.gmail.com') {
+								var regexSelected = /Tous les messages$|All/;
+							} else {
+								var regexSelected = /^INBOX$|Sent$|Envoyés$/;
+							}
 							if (regexSelected.test(item)) {
 								$('#imapfolder').append('<p><input type="checkbox" name="f1-imapfolder[]" class="f1-imapfolder" value="'+item+'" checked="checked"> ' + item+'</p>');
 							}else{

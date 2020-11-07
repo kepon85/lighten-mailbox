@@ -2,6 +2,12 @@ baseUrl: https://lighten-mailbox.zici.fr/
 title: "Lighten Mailbox"
 subTitle: " - Alléger vos boîtes mails"
 
+maintenance:
+    active: false
+    emailForTest: moi@domain.tld
+    ipForTest: 109.10.0.24
+    publicMsg: "Un petit bug sur l'applicatoin m'oblige à basculer en mode maintenance le temps de la résolution, merci de repasser plus tard."
+
 url: 
     archive: 'https://lighten-mailbox.zici.fr/archive/'
     

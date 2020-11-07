@@ -13,6 +13,24 @@ function cleanTxt($char) {
 			$char
 		);    
 }
+function folderCleanName($folderName) {
+	$folderName = preg_replace(
+			"(\[|\])", 
+			'', 
+			$folderName
+		);
+	$folderName = preg_replace(
+			"([[:space:]])", 
+			'-', 
+			$folderName
+		);
+	$folderName = preg_replace(
+			"([^a-zA-Z0-9@-])", 
+			'_', 
+			$folderName
+		);    
+	return $folderName;   
+}
 function splitEmailAddress($email){
 	$split = explode('@', $email);
 	$arr['user']=$split[0];
@@ -359,7 +377,7 @@ function jsonMessage($mod, $idClean, $parser, $header, $messageEML, $folder, $fo
 	} else {
 		$arrayTmp['answered']=false;
 	}
-	$arrayTmp['imap_folder'] = $folder;
+	$arrayTmp['imap_folder'] = folderCleanName($folder);
 	// Gestion des pièces jointes :
 	$attachments = $parser->getAttachments();
 	if (count($attachments) != 0) {
@@ -398,8 +416,11 @@ function jsonMessage($mod, $idClean, $parser, $header, $messageEML, $folder, $fo
 function saveMessage($session_id, $idClean, $parser, $header, $messageEML, $folder, $format, $mod) {
 	global $config;
 	toLog(5, "idClean : ".$idClean);
-	// Gestion des pièces jointes :
 
+	// Le nom du dossier : 
+	$folder=folderCleanName($folder);
+
+	// Gestion des pièces jointes :
 	$attachments = $parser->getAttachments();
 	if ($format != 'eml' && count($attachments) != 0) {
 		toLog(5, "Gestion des ". count($attachments) ." pièce(s) jointe(s)");
@@ -500,7 +521,7 @@ function imapGetData($mod, $session_id, $server, $port, $user, $password, $secur
 	    	toLog(5, "Création du répertoire ".$config['dir'][$mod].'/'.$session_id);
 		    mkdir($config['dir'][$mod].'/'.$session_id);
 	    }
-	    $dataFolderJson = array();
+	    //$dataFolderJson = array();
 	    $dataJson = array();
 	    $totalSize=0;
 	    $totalNb=0;
@@ -514,7 +535,7 @@ function imapGetData($mod, $session_id, $server, $port, $user, $password, $secur
 		    // Vérification de l'existance du dossier
 		    if (FALSE !== $info) {
 		    	if ($mod != 'preview') {
-			    	mkdir($config['dir'][$mod].'/'.$session_id.'/'.$folder);
+			    	mkdir($config['dir'][$mod].'/'.$session_id.'/'.folderCleanName($folder));
 			    }
 			    // Avant
 			    $dateBeforeForImap = date ( "d-M-Y", $dateBefore);
@@ -556,7 +577,7 @@ function imapGetData($mod, $session_id, $server, $port, $user, $password, $secur
 						}
 				    }
 			    }
-			    $dataFolderJson['imap_folder'][]=$folder;
+			    //$dataFolderJson['imap_folder'][]=$folder;
 			    $return['folder'][$folder]['size']=$folderSize;
 			    $totalSize = $totalSize + $folderSize;
 			    $return['folder'][$folder]['nb']=$nbEmail;
