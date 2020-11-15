@@ -151,6 +151,7 @@ function imapDetectConfig() {
 }
 
 function levelChange() {
+	$('#howto-video-fr').hide();
 	// Expert
 	if ($('#f1-level').val() == 3) {
 		$('#f1-imapAutoDetect').prop('checked',false);
@@ -169,6 +170,7 @@ function levelChange() {
 		$('.form-group.imapAutoDetect').hide();
 		$('.f1-format').hide();
 		$('#f1-folderBeginner').show();
+		$('#howto-video-fr').show();
 	}
 }
 

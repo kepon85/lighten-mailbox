@@ -105,6 +105,14 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
             margin-top: 60px;
             padding: 20px;
         }
+        #howto-video-fr {
+            margin: 10px;
+            padding: 10px;
+            background-color: #d2ffb6;
+        }
+        #howto-video-fr img {
+            float: right;
+        }
     </style>
 </head>
 
@@ -298,6 +306,14 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
                                     <option value="2"><?= _('Enlightened') ?></option>
                                     <option value="3"><?= _('Expert') ?></option>
                                 </select>
+
+                                <div id="howto-video-fr">
+                                    <?php 
+                                    if ($localeshort == 'fr') {
+                                        echo "<a href='https://vimeo.com/477628241'><img src='./assets/img/howto-video-fr-preview.png' /></a>Une vidéo tutoriel pour comprendre ce que fait ce machin est disponible par <a href='https://vimeo.com/477628241'>ici</a>. ";
+                                    }
+                                    ?>
+                                </div>
 
                                 <label for="f1-what" class="f1-what"><?= _('What do you want to do ?') ?> (<a href="https://lighten-mailbox.zici.fr/archive/example/" target="_blank"><?= _('archive example') ?></a>) </label>
                                 <select id="f1-what" class="f1-what form-control"  name="f1-what">
