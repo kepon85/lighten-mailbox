@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-05 11:38+0100\n"
-"PO-Revision-Date: 2020-11-05 15:15+0100\n"
+"POT-Creation-Date: 2020-11-15 17:16+0100\n"
+"PO-Revision-Date: 2020-11-15 17:20+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -30,11 +30,11 @@ msgstr "Archive prête à télécharger"
 msgid "Hello"
 msgstr "Salut"
 
-#: daemon.php:109 daemon.php:197 index.php:220
+#: daemon.php:109 daemon.php:197 index.php:227
 msgid "Your archive is available for download until the"
 msgstr "Votre archive est disponible au téléchargement jusqu'au"
 
-#: daemon.php:109 daemon.php:197 index.php:220
+#: daemon.php:109 daemon.php:197 index.php:227
 msgid "by this link:"
 msgstr "par ce lien:"
 
@@ -62,342 +62,359 @@ msgstr "Vous pouvez démarrer le nettoyage (suppression des messages archivés) 
 msgid "Queuing"
 msgstr "En file d'attente"
 
-#: form.php:194 index.php:468
+#: form.php:194 index.php:478
 msgid "You can follow the progress of your request by the address: "
 msgstr "Vous pouvez suivre l'avancement de votre demande par l'adresse: "
 
-#: functions.php:737
+#: functions.php:774
 msgid "Error"
 msgstr "Erreur"
 
-#: functions.php:740
+#: functions.php:777
 msgid "Waiting for approval"
 msgstr "En attente d'approbation"
 
-#: functions.php:743
+#: functions.php:780
 msgid "Waiting"
 msgstr "En attente"
 
-#: functions.php:746
+#: functions.php:783
 msgid "In progress"
 msgstr "En cours"
 
-#: functions.php:749
+#: functions.php:786
 msgid "Finished"
 msgstr "Terminé"
 
-#: functions.php:752
+#: functions.php:789
 msgid "Unknown"
 msgstr "Inconnue"
-
-#: header.php:73
-msgid "The directory "
-msgstr "Le répertoire "
 
 #: index.php:168
 msgid "Lighten your mailbox"
 msgstr "Allégez votre boîte mail"
 
-#: index.php:182
+#: index.php:189
 #, php-format
 msgid "Status of your request [%d]"
 msgstr "État de votre demande [%d]"
 
-#: index.php:183
+#: index.php:190
 #, php-format
 msgid "For %s on %s"
 msgstr "Pour %s sur %s"
 
-#: index.php:186
+#: index.php:193
 msgid "Error session : Not Found"
 msgstr "Erreur : session introuvable"
 
-#: index.php:191
+#: index.php:198
 msgid "Creation of an archive of your emails: "
 msgstr "Création d'une archive de vos emails : "
 
-#: index.php:208 index.php:245
+#: index.php:215 index.php:252
 #, php-format
 msgid "(In front of you : %d, each in turn ...)"
 msgstr "(%d devant vous, chacun à son tour ...)"
 
-#: index.php:222
+#: index.php:229
 #, php-format
 msgid "It is no longer possible to recover your archive, the deadline of %d days has expired."
 msgstr "Il n'est plus possible de récupérer votre archive, le délai de %d jours est dépassé."
 
-#: index.php:228
+#: index.php:235
 msgid "Deleting your emails: "
 msgstr "Supprimer vos e-mails: "
 
-#: index.php:247
+#: index.php:254
 msgid " (after archive)"
 msgstr " (après archive)"
 
-#: index.php:249
+#: index.php:256
 msgid "It's time to clean up!"
 msgstr "Il est temps de nettoyer !"
 
-#: index.php:267
+#: index.php:274
 msgid "Online storage is very important on the environment, this tool offers you to archive your messages by downloading them for storage on an external hard drive / USB key ..."
 msgstr "Le stockage en ligne est très énergivore et destructeur pour l'environnement, cet outil (libre et gratuit) vous propose d'archiver vos messages en les téléchargeant pour stockage sur votre ordinateur,  disque dur externe, clé USB ..."
 
-#: index.php:274
+#: index.php:281
 msgid "Your account"
 msgstr "Votre compte"
 
-#: index.php:278
+#: index.php:285
 msgid "Setting"
 msgstr "Réglage"
 
-#: index.php:282 index.php:456
+#: index.php:289 index.php:466
 msgid "Validation"
 msgstr "Validation"
 
-#: index.php:288
+#: index.php:295
 msgid "Level of computer knowledge"
 msgstr "Niveau de connaissance informatique"
 
-#: index.php:290
+#: index.php:297
 msgid "Beginner"
 msgstr "Débutant"
 
-#: index.php:291
+#: index.php:298
 msgid "Enlightened"
 msgstr "Éclairé"
 
-#: index.php:292
+#: index.php:299
 msgid "Expert"
 msgstr "Expert"
 
-#: index.php:295
+#: index.php:302
 msgid "What do you want to do ?"
 msgstr "Qu'est-ce que tu veux faire ?"
 
-#: index.php:295
+#: index.php:302
 msgid "archive example"
 msgstr "exemple d'archive"
 
-#: index.php:297
+#: index.php:304
 msgid "Archive (download these emails) then delete"
 msgstr "Archiver (télécharger mes e-mails) puis (après validation), supprimer"
 
-#: index.php:298
+#: index.php:305
 msgid "Archive (download these emails)"
 msgstr "Archiver (télécharger mes e-mails)"
 
-#: index.php:299
+#: index.php:306
 msgid "Delete these emails"
 msgstr "Supprimer ces e-mails"
 
-#: index.php:302
+#: index.php:309
 msgid "In what format do you want to download these emails ?"
 msgstr "Dans quel format souhaitez-vous télécharger vos e-mails?"
 
-#: index.php:305
+#: index.php:312
 msgid "Open with Thunderbird, Outlook..."
 msgstr "Ouvrir avec Thunderbird, Outlook ..."
 
-#: index.php:309
+#: index.php:316
 msgid "Select emails"
 msgstr "Sélectionnez les e-mails"
 
-#: index.php:310
+#: index.php:317
 msgid "From"
 msgstr "De"
 
-#: index.php:315
+#: index.php:322
 msgid "To"
 msgstr "au"
 
-#: index.php:322
+#: index.php:329
 msgid "The emails that can be found"
 msgstr "Les e-mails qui se trouvent"
 
-#: index.php:324
+#: index.php:331
 msgid "Just the messages received"
 msgstr "Juste les messages reçus"
 
-#: index.php:325
+#: index.php:332
 msgid "Message received + sent"
 msgstr "Message reçu + envoyé"
 
-#: index.php:331
+#: index.php:338
 msgid "Enter your email information"
 msgstr "Entrez vos informations de messagerie"
 
-#: index.php:334
+#: index.php:341
 msgid "Email adress"
 msgstr "Adresse e-mail"
 
-#: index.php:339
+#: index.php:346
 msgid "Warning"
 msgstr "Attention"
 
-#: index.php:340
+#: index.php:347
 msgid ""
-"Activate IMAP in your Gmail settings then <a target=\"_blank\" href=\"https://myaccount.google.com/lesssecureapps\">on this page</a> click on \"Allow less secure applications\" : enable  (<a  target=\"_blank\"  href=\"https://support.google.com/accounts/answer/6010255?hl=en\">source</a>)\n"
-"                                "
+"Gmail uses a special authentication, so it's a bit more complicated than for the others ... For gmail you need:\n"
+"                                    <ul>\n"
+"                                        <li>Log in to your account: <a href='https://gmail.com/'>https://gmail.com/</a></li>\n"
+"                                        <li>Have activated IMAP: <a href='https://support.google.com/mail/'>https://support.google.com/mail/answer/7126229</a></li>\n"
+"                                        <li>Finally on <a href='https://myaccount.google.com/lesssecureapps'>https://myaccount.google.com/lesssecureapps</a> click on 'Allow less secure applications'</li>\n"
+"                                    </ul>"
 msgstr ""
-"Activez IMAP dans vos paramètres Gmail puis <a target=\"_blank\" href=\"https://myaccount.google.com/lesssecureapps\"> sur cette page </a> cliquez sur \"Autoriser les applications moins sécurisées\" : activez (<a target = \"_ blank\" href = \"https://support.google.com/accounts/answer/6010255?hl=fr\"> source </a>)\n"
-"                                "
+"Gmail utilise une authentification particulière, c'est donc un peu plus compliquer que pour les autres... Pour gmail il faut :\n"
+"                                    <ul>\n"
+"                                        <li>Vous connecter à votre compte :  <a href='https://gmail.com/'>https://gmail.com/</a></li>\n"
+"                                        <li>Avoir activer l'IMAP : <a href='https://support.google.com/mail/'>https://support.google.com/mail/answer/7126229</a></li>\n"
+"                                        <li>Enfin  sur <a href='https://myaccount.google.com/lesssecureapps'>https://myaccount.google.com/lesssecureapps</a> cliquez sur \"Autoriser les applications moins sécurisées\" </li>\n"
+"                                    </ul>"
 
-#: index.php:344
+#: index.php:354
 msgid "Email password"
 msgstr "Mot de passe de l'email"
 
-#: index.php:345 index.php:407
+#: index.php:355 index.php:417
 msgid "Your email password"
 msgstr "Votre mot de passe de messagerie"
 
-#: index.php:346
+#: index.php:356
 #, php-format
-msgid "Note for your password : You are using free software (the code of which is available here), so you can verify that it is used (encrypted with %s) so that the software performs the requested action temporarily. As soon as the action is started the password is deleted. Despite this it is good to change your password frequently, why not tomorrow?"
-msgstr "Remarque pour votre mot de passe: vous utilisez un logiciel libre (dont le code est disponible ici), vous pouvez donc vérifier qu'il est utilisé (chiffré avec %s) afin que le logiciel effectue temporairement l'action demandée (archivage, suppression). Dès que l'action est démarré, le mot de passe est supprimé. Malgré cela, il est bon de changer fréquemment de mot de passe, pourquoi pas demain?"
+msgid "Note for your password : You are using free software (the code of which is available here), so you can verify that it is used (encrypted with %s) so that the software performs the requested action temporarily. As soon as the action is started the password is deleted. Despite this, I encourage you to change your password after using this software (or by changing it now temporarily)."
+msgstr "Remarque pour votre mot de passe: vous utilisez un logiciel libre (dont le code est disponible ici), vous pouvez donc vérifier qu'il est utilisé (chiffré avec %s) afin que le logiciel effectue temporairement l'action demandée (archivage, suppression). Dès que l'action est démarré, le mot de passe est supprimé. Malgré cela, je vous en courage à changer votre mot de passe après avoir utilisé ce logiciel (ou en le changeant dès maintenant temporairement)"
 
-#: index.php:351
+#: index.php:361
 msgid "Automatic detection of IMAP parameters"
 msgstr "Détection automatique des paramètres IMAP"
 
-#: index.php:355
+#: index.php:365
 msgid "I accept the general terms of use"
 msgstr "J'accepte les conditions générales d'utilisation"
 
-#: index.php:356 index.php:450
+#: index.php:366 index.php:460
 msgid "Next"
 msgstr "Suivant"
 
-#: index.php:361
+#: index.php:371
 msgid "Email IMAP Connexion"
 msgstr "Connexion IMAP"
 
-#: index.php:366
+#: index.php:376
 msgid "We are trying to detect your IMAP configuration, please wait"
 msgstr "Nous essayons de détecter votre configuration IMAP, veuillez patienter"
 
-#: index.php:368 index.php:374 index.php:449 index.php:472
+#: index.php:378 index.php:384 index.php:459 index.php:482
 msgid "Cancel"
 msgstr "Annuler"
 
-#: index.php:372
+#: index.php:382
 msgid "We create an overview for validation, please wait"
 msgstr "Nous créons un aperçu pour validation, veuillez patienter"
 
-#: index.php:378
+#: index.php:388
 msgid "An error occured"
 msgstr "Une erreur s'est produite"
 
-#: index.php:382
+#: index.php:392
 msgid "We were unable to automatically detect your configuration, but you can specify it manually. Contact your email provider for more information on your IMAP connection settings. Check if your password is correct, otherwise automatic discovery is impossible."
 msgstr "Nous n'avons pas pu détecter automatiquement votre configuration, mais vous pouvez la spécifier manuellement. Contactez votre fournisseur de messagerie pour plus d'informations sur vos paramètres de connexion IMAP. Vérifiez si votre mot de passe est correct, sinon la découverte automatique est impossible."
 
-#: index.php:386
+#: index.php:396
 msgid "Contact your email provider for more information on your IMAP connection settings. Check if your password is correct."
 msgstr "Contactez votre fournisseur de messagerie pour plus d'informations sur vos paramètres de connexion IMAP. Vérifiez si votre mot de passe est correct."
 
-#: index.php:390
+#: index.php:400
 msgid "The connection to your mailbox has been successful!"
 msgstr "La connexion à votre boîte aux lettres a réussi!"
 
-#: index.php:394
+#: index.php:404
 msgid "Automatically search for IMAP settings"
 msgstr "Rechercher automatiquement les paramètres IMAP"
 
-#: index.php:398
+#: index.php:408
 msgid "IMAP username"
 msgstr "Nom d'utilisateur IMAP"
 
-#: index.php:406
+#: index.php:416
 msgid "IMAP password"
 msgstr "Mot de passe IMAP"
 
-#: index.php:411
+#: index.php:421
 msgid "IMAP server"
 msgstr "Serveur IMAP"
 
-#: index.php:414
+#: index.php:424
 msgid "IMAP port"
 msgstr "Port IMAP"
 
-#: index.php:422
+#: index.php:432
 msgid "Connection security"
 msgstr "Sécurité de la connexion"
 
-#: index.php:424
+#: index.php:434
 msgid "None"
 msgstr "Aucune"
 
-#: index.php:425
+#: index.php:435
 msgid "STARTTLS"
 msgstr "STARTTLS"
 
-#: index.php:426
+#: index.php:436
 msgid "SSL/TLS"
 msgstr "SSL/TLS"
 
-#: index.php:429
+#: index.php:439
 msgid "Validate the certificate"
 msgstr "Validez le certificat"
 
-#: index.php:430
+#: index.php:440
 msgid "Authentication method"
 msgstr "Méthode d'authentification"
 
-#: index.php:432
+#: index.php:442
 msgid "Normal"
 msgstr "Normal"
 
-#: index.php:433
+#: index.php:443
 msgid "Encrypt"
 msgstr "Crypter"
 
-#: index.php:438
+#: index.php:448
 msgid "Select the IMAP folders to use"
 msgstr "Sélectionnez les dossiers IMAP à utiliser"
 
-#: index.php:445
+#: index.php:455
 msgid "Current connection..."
 msgstr "Connexion actuelle ..."
 
-#: index.php:451
+#: index.php:461
 msgid "Check the connection"
 msgstr "Vérifiez la connexion"
 
-#: index.php:458
+#: index.php:468
 msgid "Here is an overview of the impact of your request:"
 msgstr "Voici un aperçu de l'impact de votre demande:"
 
-#: index.php:461
+#: index.php:471
 msgid "Folder name"
 msgstr "Nom de dossier"
 
-#: index.php:461
+#: index.php:471
 msgid "Number of emails selected"
 msgstr "Nombre d'e-mails sélectionnés"
 
-#: index.php:461
+#: index.php:471
 msgid "Selected email sizes"
 msgstr "Taille d'e-mail sélectionnés"
 
-#: index.php:465
+#: index.php:475
 msgid "Over quota : Your archive exceeds the allowed quota size. A tip: reduce the time range (just 1 years, 6 months ...)"
 msgstr "Dépassement du quota : votre archive dépasse la taille de quota autorisée. Un conseil : réduisez la durée sélectionnée (seulement 1 an, 6 mois ...)"
 
-#: index.php:467
+#: index.php:477
 msgid "Here we go !"
 msgstr "Et c'est parti !"
 
-#: index.php:469
+#: index.php:479
 msgid "You will be redirected there automatically in a few seconds"
 msgstr "Vous y serez redirigé automatiquement dans quelques secondes"
 
-#: index.php:473
+#: index.php:483
 msgid "Validate"
 msgstr "Valider"
 
-#: index.php:547
+#: index.php:557
 msgid "You are about to delete the messages in your previously selected mailbox.\\nNote: if you have requested an archive check that the download went well, that the archive is readable and that the messages are present."
 msgstr "Vous êtes sur le point de supprimer les messages de votre boîte aux lettres précédemment sélectionnée. \\n Remarque: si vous avez demandé une archive, vérifiez que le téléchargement s'est bien déroulé, que l'archive est lisible, que les messages sont présents."
+
+#~ msgid "The directory "
+#~ msgstr "Le répertoire "
+
+#~ msgid ""
+#~ "Activate IMAP in your Gmail settings then <a target=\"_blank\" href=\"https://myaccount.google.com/lesssecureapps\">on this page</a> click on \"Allow less secure applications\" : enable  (<a  target=\"_blank\"  href=\"https://support.google.com/accounts/answer/6010255?hl=en\">source</a>)\n"
+#~ "                                "
+#~ msgstr ""
+#~ "Activez IMAP dans vos paramètres Gmail puis <a target=\"_blank\" href=\"https://myaccount.google.com/lesssecureapps\"> sur cette page </a> cliquez sur \"Autoriser les applications moins sécurisées\" : activez (<a target = \"_ blank\" href = \"https://support.google.com/accounts/answer/6010255?hl=fr\"> source </a>)\n"
+#~ "                                "
+
+#~ msgid "Note for your password : You are using free software (the code of which is available here), so you can verify that it is used (encrypted with %s) so that the software performs the requested action temporarily. As soon as the action is started the password is deleted. Despite this it is good to change your password frequently, why not tomorrow?"
+#~ msgstr "Remarque pour votre mot de passe: vous utilisez un logiciel libre (dont le code est disponible ici), vous pouvez donc vérifier qu'il est utilisé (chiffré avec %s) afin que le logiciel effectue temporairement l'action demandée (archivage, suppression). Dès que l'action est démarré, le mot de passe est supprimé. Malgré cela, il est bon de changer fréquemment de mot de passe, pourquoi pas demain?"
 
 #~ msgid ""
 #~ "Activate IMAP in your Gmail settings then <a href=\"https://myaccount.google.com/lesssecureapps\">on this page</a> click on \"Allow less secure applications\" : enable  (<a href=\"https://support.google.com/accounts/answer/6010255?hl=en\">source</a>)\n"

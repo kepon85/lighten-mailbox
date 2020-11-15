@@ -69,8 +69,8 @@ if(php_sapi_name() != 'cli') {
 }
 
 
-if (!is_writable($config['dir']['absolut'].'/'.$config['dir']['archive'])) {
-    exit(_('The directory '.$config['dir']['archive'].' is not accessible in writing, please report it to the administrator'));
-}
+// if (!is_writable($config['dir']['absolut'].'/'.$config['dir']['archive'])) {
+//     exit(_('The directory '.$config['dir']['archive'].' is not accessible in writing, please report it to the administrator'));
+// }
 
 ?>

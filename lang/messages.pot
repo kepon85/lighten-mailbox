@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-05 11:38+0100\n"
+"POT-Creation-Date: 2020-11-15 17:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,11 +32,11 @@ msgstr ""
 msgid "Hello"
 msgstr ""
 
-#: daemon.php:109 daemon.php:197 index.php:220
+#: daemon.php:109 daemon.php:197 index.php:227
 msgid "Your archive is available for download until the"
 msgstr ""
 
-#: daemon.php:109 daemon.php:197 index.php:220
+#: daemon.php:109 daemon.php:197 index.php:227
 msgid "by this link:"
 msgstr ""
 
@@ -66,243 +66,247 @@ msgstr ""
 msgid "Queuing"
 msgstr ""
 
-#: form.php:194 index.php:468
+#: form.php:194 index.php:478
 msgid "You can follow the progress of your request by the address: "
 msgstr ""
 
-#: functions.php:737
+#: functions.php:774
 msgid "Error"
 msgstr ""
 
-#: functions.php:740
+#: functions.php:777
 msgid "Waiting for approval"
 msgstr ""
 
-#: functions.php:743
+#: functions.php:780
 msgid "Waiting"
 msgstr ""
 
-#: functions.php:746
+#: functions.php:783
 msgid "In progress"
 msgstr ""
 
-#: functions.php:749
+#: functions.php:786
 msgid "Finished"
 msgstr ""
 
-#: functions.php:752
+#: functions.php:789
 msgid "Unknown"
-msgstr ""
-
-#: header.php:73
-msgid "The directory "
 msgstr ""
 
 #: index.php:168
 msgid "Lighten your mailbox"
 msgstr ""
 
-#: index.php:182
+#: index.php:189
 #, php-format
 msgid "Status of your request [%d]"
 msgstr ""
 
-#: index.php:183
+#: index.php:190
 #, php-format
 msgid "For %s on %s"
 msgstr ""
 
-#: index.php:186
+#: index.php:193
 msgid "Error session : Not Found"
 msgstr ""
 
-#: index.php:191
+#: index.php:198
 msgid "Creation of an archive of your emails: "
 msgstr ""
 
-#: index.php:208 index.php:245
+#: index.php:215 index.php:252
 #, php-format
 msgid "(In front of you : %d, each in turn ...)"
 msgstr ""
 
-#: index.php:222
+#: index.php:229
 #, php-format
 msgid ""
 "It is no longer possible to recover your archive, the deadline of %d days "
 "has expired."
 msgstr ""
 
-#: index.php:228
+#: index.php:235
 msgid "Deleting your emails: "
 msgstr ""
 
-#: index.php:247
+#: index.php:254
 msgid " (after archive)"
 msgstr ""
 
-#: index.php:249
+#: index.php:256
 msgid "It's time to clean up!"
 msgstr ""
 
-#: index.php:267
+#: index.php:274
 msgid ""
 "Online storage is very important on the environment, this tool offers you to "
 "archive your messages by downloading them for storage on an external hard "
 "drive / USB key ..."
 msgstr ""
 
-#: index.php:274
+#: index.php:281
 msgid "Your account"
 msgstr ""
 
-#: index.php:278
+#: index.php:285
 msgid "Setting"
 msgstr ""
 
-#: index.php:282 index.php:456
+#: index.php:289 index.php:466
 msgid "Validation"
 msgstr ""
 
-#: index.php:288
+#: index.php:295
 msgid "Level of computer knowledge"
 msgstr ""
 
-#: index.php:290
+#: index.php:297
 msgid "Beginner"
 msgstr ""
 
-#: index.php:291
+#: index.php:298
 msgid "Enlightened"
 msgstr ""
 
-#: index.php:292
+#: index.php:299
 msgid "Expert"
 msgstr ""
 
-#: index.php:295
+#: index.php:302
 msgid "What do you want to do ?"
 msgstr ""
 
-#: index.php:295
+#: index.php:302
 msgid "archive example"
 msgstr ""
 
-#: index.php:297
+#: index.php:304
 msgid "Archive (download these emails) then delete"
 msgstr ""
 
-#: index.php:298
+#: index.php:305
 msgid "Archive (download these emails)"
 msgstr ""
 
-#: index.php:299
+#: index.php:306
 msgid "Delete these emails"
 msgstr ""
 
-#: index.php:302
+#: index.php:309
 msgid "In what format do you want to download these emails ?"
 msgstr ""
 
-#: index.php:305
+#: index.php:312
 msgid "Open with Thunderbird, Outlook..."
 msgstr ""
 
-#: index.php:309
+#: index.php:316
 msgid "Select emails"
 msgstr ""
 
-#: index.php:310
+#: index.php:317
 msgid "From"
 msgstr ""
 
-#: index.php:315
+#: index.php:322
 msgid "To"
 msgstr ""
 
-#: index.php:322
+#: index.php:329
 msgid "The emails that can be found"
 msgstr ""
 
-#: index.php:324
+#: index.php:331
 msgid "Just the messages received"
 msgstr ""
 
-#: index.php:325
+#: index.php:332
 msgid "Message received + sent"
 msgstr ""
 
-#: index.php:331
+#: index.php:338
 msgid "Enter your email information"
 msgstr ""
 
-#: index.php:334
+#: index.php:341
 msgid "Email adress"
 msgstr ""
 
-#: index.php:339
+#: index.php:346
 msgid "Warning"
 msgstr ""
 
-#: index.php:340
+#: index.php:347
 msgid ""
-"Activate IMAP in your Gmail settings then <a target=\"_blank\" href="
-"\"https://myaccount.google.com/lesssecureapps\">on this page</a> click on "
-"\"Allow less secure applications\" : enable  (<a  target=\"_blank\"  href="
-"\"https://support.google.com/accounts/answer/6010255?hl=en\">source</a>)\n"
-"                                "
+"Gmail uses a special authentication, so it's a bit more complicated than for "
+"the others ... For gmail you need:\n"
+"                                    <ul>\n"
+"                                        <li>Log in to your account: <a "
+"href='https://gmail.com/'>https://gmail.com/</a></li>\n"
+"                                        <li>Have activated IMAP: <a "
+"href='https://support.google.com/mail/'>https://support.google.com/mail/"
+"answer/7126229</a></li>\n"
+"                                        <li>Finally on <a href='https://"
+"myaccount.google.com/lesssecureapps'>https://myaccount.google.com/"
+"lesssecureapps</a> click on 'Allow less secure applications'</li>\n"
+"                                    </ul>"
 msgstr ""
 
-#: index.php:344
+#: index.php:354
 msgid "Email password"
 msgstr ""
 
-#: index.php:345 index.php:407
+#: index.php:355 index.php:417
 msgid "Your email password"
 msgstr ""
 
-#: index.php:346
+#: index.php:356
 #, php-format
 msgid ""
 "Note for your password : You are using free software (the code of which is "
 "available here), so you can verify that it is used (encrypted with %s) so "
 "that the software performs the requested action temporarily. As soon as the "
-"action is started the password is deleted. Despite this it is good to change "
-"your password frequently, why not tomorrow?"
-msgstr ""
-
-#: index.php:351
-msgid "Automatic detection of IMAP parameters"
-msgstr ""
-
-#: index.php:355
-msgid "I accept the general terms of use"
-msgstr ""
-
-#: index.php:356 index.php:450
-msgid "Next"
+"action is started the password is deleted. Despite this, I encourage you to "
+"change your password after using this software (or by changing it now "
+"temporarily)."
 msgstr ""
 
 #: index.php:361
+msgid "Automatic detection of IMAP parameters"
+msgstr ""
+
+#: index.php:365
+msgid "I accept the general terms of use"
+msgstr ""
+
+#: index.php:366 index.php:460
+msgid "Next"
+msgstr ""
+
+#: index.php:371
 msgid "Email IMAP Connexion"
 msgstr ""
 
-#: index.php:366
+#: index.php:376
 msgid "We are trying to detect your IMAP configuration, please wait"
 msgstr ""
 
-#: index.php:368 index.php:374 index.php:449 index.php:472
+#: index.php:378 index.php:384 index.php:459 index.php:482
 msgid "Cancel"
 msgstr ""
 
-#: index.php:372
+#: index.php:382
 msgid "We create an overview for validation, please wait"
 msgstr ""
 
-#: index.php:378
+#: index.php:388
 msgid "An error occured"
 msgstr ""
 
-#: index.php:382
+#: index.php:392
 msgid ""
 "We were unable to automatically detect your configuration, but you can "
 "specify it manually. Contact your email provider for more information on "
@@ -310,115 +314,115 @@ msgid ""
 "automatic discovery is impossible."
 msgstr ""
 
-#: index.php:386
+#: index.php:396
 msgid ""
 "Contact your email provider for more information on your IMAP connection "
 "settings. Check if your password is correct."
 msgstr ""
 
-#: index.php:390
+#: index.php:400
 msgid "The connection to your mailbox has been successful!"
 msgstr ""
 
-#: index.php:394
+#: index.php:404
 msgid "Automatically search for IMAP settings"
 msgstr ""
 
-#: index.php:398
+#: index.php:408
 msgid "IMAP username"
 msgstr ""
 
-#: index.php:406
+#: index.php:416
 msgid "IMAP password"
 msgstr ""
 
-#: index.php:411
+#: index.php:421
 msgid "IMAP server"
 msgstr ""
 
-#: index.php:414
+#: index.php:424
 msgid "IMAP port"
 msgstr ""
 
-#: index.php:422
+#: index.php:432
 msgid "Connection security"
 msgstr ""
 
-#: index.php:424
+#: index.php:434
 msgid "None"
 msgstr ""
 
-#: index.php:425
+#: index.php:435
 msgid "STARTTLS"
 msgstr ""
 
-#: index.php:426
+#: index.php:436
 msgid "SSL/TLS"
 msgstr ""
 
-#: index.php:429
+#: index.php:439
 msgid "Validate the certificate"
 msgstr ""
 
-#: index.php:430
+#: index.php:440
 msgid "Authentication method"
 msgstr ""
 
-#: index.php:432
+#: index.php:442
 msgid "Normal"
 msgstr ""
 
-#: index.php:433
+#: index.php:443
 msgid "Encrypt"
 msgstr ""
 
-#: index.php:438
+#: index.php:448
 msgid "Select the IMAP folders to use"
 msgstr ""
 
-#: index.php:445
+#: index.php:455
 msgid "Current connection..."
 msgstr ""
 
-#: index.php:451
+#: index.php:461
 msgid "Check the connection"
 msgstr ""
 
-#: index.php:458
+#: index.php:468
 msgid "Here is an overview of the impact of your request:"
 msgstr ""
 
-#: index.php:461
+#: index.php:471
 msgid "Folder name"
 msgstr ""
 
-#: index.php:461
+#: index.php:471
 msgid "Number of emails selected"
 msgstr ""
 
-#: index.php:461
+#: index.php:471
 msgid "Selected email sizes"
 msgstr ""
 
-#: index.php:465
+#: index.php:475
 msgid ""
 "Over quota : Your archive exceeds the allowed quota size. A tip: reduce the "
 "time range (just 1 years, 6 months ...)"
 msgstr ""
 
-#: index.php:467
+#: index.php:477
 msgid "Here we go !"
 msgstr ""
 
-#: index.php:469
+#: index.php:479
 msgid "You will be redirected there automatically in a few seconds"
 msgstr ""
 
-#: index.php:473
+#: index.php:483
 msgid "Validate"
 msgstr ""
 
-#: index.php:547
+#: index.php:557
 msgid ""
 "You are about to delete the messages in your previously selected mailbox."
 "\\nNote: if you have requested an archive check that the download went well, "

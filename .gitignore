@@ -8,3 +8,4 @@ vendor
 composer
 composer.lock
 dev
+*.sublime*

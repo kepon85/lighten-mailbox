@@ -344,13 +344,16 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
                             
                             <div class="imapwarning gmail">
                             <h4><?= _('Warning') ?> gmail.com :</h4>
-                            <p><?=_('Activate IMAP in your Gmail settings then <a target="_blank" href="https://myaccount.google.com/lesssecureapps">on this page</a> click on "Allow less secure applications" : enable  (<a  target="_blank"  href="https://support.google.com/accounts/answer/6010255?hl=en">source</a>)
-                                ')?></p></div>
-                                
+                            <p><?=_("Gmail uses a special authentication, so it's a bit more complicated than for the others ... For gmail you need:
+                                    <ul>
+                                        <li>Log in to your account: <a href='https://gmail.com/'>https://gmail.com/</a></li>
+                                        <li>Have activated IMAP: <a href='https://support.google.com/mail/'>https://support.google.com/mail/answer/7126229</a></li>
+                                        <li>Finally on <a href='https://myaccount.google.com/lesssecureapps'>https://myaccount.google.com/lesssecureapps</a> click on 'Allow less secure applications'</li>
+                                    </ul>")?></p></div>
                             <div class="form-group">
                                 <label for="f1-password-first"><?= _('Email password') ?> : </label>
                                 <input type="password" name="f1-password-first" placeholder="<?= _('Your email password') ?>" class="f1-password-first f1-password form-control" id="f1-password-first">
-                                <p class="f1-password note"><?= printf(_('Note for your password : You are using free software (the code of which is available here), so you can verify that it is used (encrypted with %s) so that the software performs the requested action temporarily. As soon as the action is started the password is deleted. Despite this it is good to change your password frequently, why not tomorrow?'), $config['crypt']['method']) ?></p>
+                                <p class="f1-password note"><?= printf(_('Note for your password : You are using free software (the code of which is available here), so you can verify that it is used (encrypted with %s) so that the software performs the requested action temporarily. As soon as the action is started the password is deleted. Despite this, I encourage you to change your password after using this software (or by changing it now temporarily).'), $config['crypt']['method']) ?></p>
                             </div>
                             
                             <div class="form-group imapAutoDetect">
