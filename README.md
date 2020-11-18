@@ -13,7 +13,7 @@ Exemple d'index d'archive : https://lighten-mailbox.zici.fr/archive/example/ (ut
 Pré-requis
 
 * PHP > 7.0
-  * php dbo mysql
+  * php pdo mysql
   * php yaml
   * composer
     * php-mime-mail-parser
@@ -28,9 +28,16 @@ Télécharger le dépôt git et le rendre accessible en HTTP
 Installation des dépendances php : 
 
 ```bash
+#### PDO
+apt install php-pdo
+#### Mail parse : 
 composer require php-mime-mail-parser/php-mime-mail-parser
+# Ou : 
+apt install php-mailparse
+### net_dns2
 composer require pear/net_dns2
-composer require phpmailer
+###
+composer require phpmailer/phpmailer
 ```
 
 Créer une base de donnée Mysql et y injecter le contenu de  *	*
