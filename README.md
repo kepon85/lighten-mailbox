@@ -31,12 +31,11 @@ Installation des dépendances php :
 #### PDO
 apt install php-pdo
 #### Mail parse : 
-composer require php-mime-mail-parser/php-mime-mail-parser
-# Ou : 
 apt install php-mailparse
+composer require php-mime-mail-parser/php-mime-mail-parser
 ### net_dns2
 composer require pear/net_dns2
-###
+### phpmailer
 composer require phpmailer/phpmailer
 ```
 
