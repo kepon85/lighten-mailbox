@@ -3,8 +3,10 @@
 # /etc/init.d/lighten-mailbox
 # Fichier sous-système pour le serveur "lighten-mailbox"
 
-# Configure THIS !!
+###### Configure THIS !!
+# Chemin de l'application : 
 DIR="/var/www/lighten-mailbox.zici.fr/web"
+# Utilisateur qui lance le daemon (le même qui exécute php sur votre serveur web, souvent www-data)
 USER="web242"
 #USER="www-data" 
 

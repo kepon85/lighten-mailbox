@@ -39,8 +39,8 @@ mailer:
 
 
 log:
-    path: /var/www/lighten-mailbox.zici.fr/private/lighten.log
-    level: 5
+    path: /var/www/lighten-mailbox.zici.fr/lighten.log
+    level: 4
     # LOG_LEVEL_OFF = 0;
     # LOG_LEVEL_FATAL = 1;
     # LOG_LEVEL_ERROR = 2;

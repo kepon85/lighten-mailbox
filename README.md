@@ -14,6 +14,7 @@ Pré-requis
 
 * PHP > 7.0
   * php pdo mysql
+  * php-imap
   * php yaml
   * composer
     * php-mime-mail-parser
@@ -28,6 +29,8 @@ Télécharger le dépôt git et le rendre accessible en HTTP
 Installation des dépendances php : 
 
 ```bash
+#### php imap
+apt install php-imap
 #### PDO
 apt install php-pdo
 #### Mail parse : 
@@ -53,7 +56,34 @@ cp config.yaml_default config.yaml
 
 Editer el fichier config.yaml et paramétrer ce dont vous avez besoin, notaement les accès Mysql, le mailer...
 
-Pour le daemon, le script ini.d se trouve dans *init.d/lighten-mailbox*
+Assurez vous que le fichier de log soit créé et accessible en écriture par votre serveur web.
+
+Exemple de fichier de config : 
+
+```yaml
+log:
+    path: /var/www/lighten-mailbox.zici.fr/private/lighten.log
+    level: 4
+```
+
+Créer le répertorie (un endroit non accessible sur le web de préférence), et s'assurer que votre utilisateur php (ici www-data) est accès en écriture à celui-ci :
+
+```bash
+mkdir -p /var/www/lighten-mailbox.zici.fr/private
+touch /var/www/lighten-mailbox.zici.fr/private/lighten.log
+chown -R www-data /var/www/lighten-mailbox.zici.fr/private/
+```
+
+Pour le daemon, le script ini.d se trouve dans *init.d/lighten-mailbox* éditer le début du script pour indiquer (a minima) : 
+
+```bash
+###### Configure THIS !!
+# Chemin de l'application : 
+DIR="/var/www/lighten-mailbox.zici.fr/web"
+# Utilisateur qui lance le daemon (le même qui exécute php sur votre serveur web, souvent www-data)
+USER="web242"
+#USER="www-data" 
+```
 
 ## Changelog
 
