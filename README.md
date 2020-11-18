@@ -16,6 +16,7 @@ Pré-requis
   * php pdo mysql
   * php-imap
   * php yaml
+  * php cli
   * composer
     * php-mime-mail-parser
     * net_dns2
@@ -29,12 +30,10 @@ Télécharger le dépôt git et le rendre accessible en HTTP
 Installation des dépendances php : 
 
 ```bash
-#### php imap
-apt install php-imap
-#### PDO
-apt install php-pdo
+#### Dépendance système (debian 10)
+apt install php-imap php-yaml php-mailparse curl php-cli php-mbstring git unzip composer
+cd /var/www/lighten-mailbox.zici.fr/web # Chemin de votre installation puis
 #### Mail parse : 
-apt install php-mailparse
 composer require php-mime-mail-parser/php-mime-mail-parser
 ### net_dns2
 composer require pear/net_dns2
@@ -54,7 +53,45 @@ Copier le fichier config.yaml
 cp config.yaml_default config.yaml
 ```
 
-Editer el fichier config.yaml et paramétrer ce dont vous avez besoin, notaement les accès Mysql, le mailer...
+Editer le fichier config.yaml et paramétrer ce dont vous avez besoin, notaement les accès Mysql, le mailer, le répertoire de travail (minimum) :
+
+```yaml
+baseUrl: https://lighten-mailbox.zici.fr/:
+[...]
+db:
+    dsn: 'mysql:host=localhost;dbname=lightmb'
+    user: 'lightmb'
+    password: '**********'
+[...]
+mailer:
+    host: "mail.exemple.com"
+    port: 587
+    secure: "tls" # ssl or tls or comment for unsecure
+    certverify: false
+    auth: true
+    username: "vous@exemple.com"
+    password : "***********"
+    from: "vous@exemple.com"
+    replyto: "vous@exemple.com"
+[...]
+url: 
+    archive: 'https://lighten-mailbox.zici.fr/archive/'
+[...]
+dir:
+    absolut: '/var/www/lighten-mailbox.zici.fr/web' # Votre répertoire de travail
+[...]
+crypt:   # https://www.php.net/manual/fr/function.openssl-encrypt.php
+    method: 'AES-128-CTR'
+    key: 'LesBoitesMailsDoiventMaigrires'
+    iv: 'ck98sle98zy39eft'
+```
+
+Assurez vous que le dossier "archive" soit accessible en écriture par votre serveur web :
+
+```bash
+mkdir /var/www/lighten-mailbox.zici.fr/web/archive
+chown -R www-data /var/www/lighten-mailbox.zici.fr/archive/
+```
 
 Assurez vous que le fichier de log soit créé et accessible en écriture par votre serveur web.
 
