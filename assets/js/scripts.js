@@ -157,19 +157,19 @@ function levelChange() {
 		$('#f1-imapAutoDetect').prop('checked',false);
 		$('.f1-format').show();
 		$('.form-group.imapAutoDetect').show();
-		$('#f1-folderBeginner').hide();
+		$('.f1-folderBeginner').hide();
 	// Intermédiaire
 	} else if ($('#f1-level').val() == 2) {
 		$('#f1-imapAutoDetect').prop('checked',true);
 		$('.form-group.imapAutoDetect').show();
 		$('.f1-format').show();
-		$('#f1-folderBeginner').hide();
+		$('.f1-folderBeginner').hide();
 	// Novice
 	} else if ($('#f1-level').val() == 1) {
 		$('#f1-imapAutoDetect').prop('checked',true);
 		$('.form-group.imapAutoDetect').hide();
 		$('.f1-format').hide();
-		$('#f1-folderBeginner').show();
+		$('.f1-folderBeginner').show();
 		$('#howto-video-fr').show();
 	}
 }

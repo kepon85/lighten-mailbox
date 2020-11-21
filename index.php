@@ -217,6 +217,10 @@ if (isset($_GET['DeleteApproval']) && isset($_GET['session_id'])) {
                                     }
                                     $spoolerArchiveFetch = $spoolerArchive->fetch();
                                     echo status2humain($spoolerArchiveFetch['status']);
+                                    // Stop refresh si terminé
+                                    if ($spoolerArchiveFetch['status'] == 5) {
+                                        unset($refreshAuto);
+                                    }
                                     $spoolerWaitBefore=spoolerWaitBefore($_GET['session_id']);
                                     if ($spoolerArchiveFetch['status'] == 2 && $spoolerWaitBefore != 0) {
                                         echo " ";

@@ -132,7 +132,7 @@ while (true) {
 					$req = $db->prepare("UPDATE spooler SET status = 5, password = null WHERE id = :id");
 					$req->bindParam('id', $spoolerNextArray['id'], PDO::PARAM_INT);
 					$req->execute();
-					$mailSend_return = mailSend(username2email($spoolerNextArray['user'], $spoolerNextArray['domain']), _('Archive ready to download'), _('Hello').'<br /></br>
+					$mailSend_return = mailSend(username2email($spoolerNextArray['user'], $spoolerNextArray['domain']), _('You have relieved your mailbox'), _('Hello').'<br /></br>
 
 '._('Congratulations, you have relieved your mailbox of').' '.$spoolerNextArray['total_nb'].' '._('emails').' ('.convertOctect2humain($spoolerNextArray['total_size']).')');
 				    if ($mailSend_return != true) {
