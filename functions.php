@@ -184,7 +184,7 @@ function imapTestCon($session_id, $domain, $server, $port, $user, $password, $se
 		$list = imap_list($mailbox, "{".$server."}", "*");
 		if (is_array($list)) {
 			foreach ($list as $val) {
-				$return['folder'][] = str_replace("{".$server."}", '', utf8_encode(imap_utf7_decode($val)));
+				$return['folder'][] = str_replace("{".$server."}", '', $val);
 			}
 		}
 		imap_close($mailbox);
@@ -424,10 +424,10 @@ function saveMessage($session_id, $idClean, $parser, $header, $messageEML, $fold
 	$attachments = $parser->getAttachments();
 	if ($format != 'eml' && count($attachments) != 0) {
 		toLog(5, "Gestion des ". count($attachments) ." pièce(s) jointe(s)");
-		mkdir($config['dir'][$mod].'/'.$session_id.'/'.$folder.'/'.$idClean);
+		mkdir($config['dir']['absolut'].'/'.$config['dir'][$mod].'/'.$session_id.'/'.$folder.'/'.$idClean);
 		//var_dump($attachments);
 		foreach ($attachments as $attachment) {
-			$attachment->save($config['dir'][$mod].'/'.$session_id.'/'.$folder.'/'.$idClean);
+			$attachment->save($config['dir']['absolut'].'/'.$config['dir'][$mod].'/'.$session_id.'/'.$folder.'/'.$idClean);
 			$arrayTmp['attachmentsFilename'][]=$attachment->getFilename();
 		}
 	}
@@ -484,18 +484,18 @@ function saveMessage($session_id, $idClean, $parser, $header, $messageEML, $fold
 		// Recherche des formats supportés : 
 		$text = $parser->getMessageBody('text');
 		if ($text) {
-			file_put_contents($config['dir'][$mod].'/'.$session_id.'/'.$folder.'/'.$idClean.'.txt', $headerTxt.$text);
+			file_put_contents($config['dir']['absolut'].'/'.$config['dir'][$mod].'/'.$session_id.'/'.$folder.'/'.$idClean.'.txt', $headerTxt.$text);
 		}
 		$html = $parser->getMessageBody('html');
 		$htmlEmbedded = $parser->getMessageBody('htmlEmbedded');
 		if ($htmlEmbedded) {
-			file_put_contents($config['dir'][$mod].'/'.$session_id.'/'.$folder.'/'.$idClean.'.html', $headerHtml.$htmlEmbedded);
+			file_put_contents($config['dir']['absolut'].'/'.$config['dir'][$mod].'/'.$session_id.'/'.$folder.'/'.$idClean.'.html', $headerHtml.$htmlEmbedded);
 		} else if ($html) {
-			file_put_contents($config['dir'][$mod].'/'.$session_id.'/'.$folder.'/'.$idClean.'.html', $headerHtml.$html);
+			file_put_contents($config['dir']['absolut'].'/'.$config['dir'][$mod].'/'.$session_id.'/'.$folder.'/'.$idClean.'.html', $headerHtml.$html);
 		}
 	} else {
 		// toLog(5, "Export en EML");
-		file_put_contents($config['dir'][$mod].'/'.$session_id.'/'.$folder.'/'.$idClean.'.eml', $messageEML);
+		file_put_contents($config['dir']['absolut'].'/'.$config['dir'][$mod].'/'.$session_id.'/'.$folder.'/'.$idClean.'.eml', $messageEML);
 	}
 	unset($arrayTmp);
 }
@@ -503,9 +503,9 @@ function saveMessage($session_id, $idClean, $parser, $header, $messageEML, $fold
 function imapGetData($mod, $session_id, $server, $port, $user, $password, $secure, $auth, $cert, $imapfolder, $dateSince, $dateBefore, $what, $format) {
     global $config;
     $parser = new PhpMimeMailParser\Parser();
-    if (is_dir($config['dir'][$mod].'/'.$session_id)) {
-    	toLog(5, "Ménage du répertoire ".$config['dir'][$mod].'/'.$session_id);
-	    rrmdir($config['dir'][$mod].'/'.$session_id);
+    if (is_dir($config['dir']['absolut'].'/'.$config['dir'][$mod].'/'.$session_id)) {
+    	toLog(5, "Ménage du répertoire ".$config['dir']['absolut'].'/'.$config['dir'][$mod].'/'.$session_id);
+	    rrmdir($config['dir']['absolut'].'/'.$config['dir'][$mod].'/'.$session_id);
     }
     $return['result'] = true;
     // Get folder information
@@ -518,8 +518,8 @@ function imapGetData($mod, $session_id, $server, $port, $user, $password, $secur
 	    toLog(2, "Connexion error");
     } else {
 	    if ($mod != 'preview') {
-	    	toLog(5, "Création du répertoire ".$config['dir'][$mod].'/'.$session_id);
-		    mkdir($config['dir'][$mod].'/'.$session_id);
+	    	toLog(5, "Création du répertoire ".$config['dir']['absolut'].'/'.$config['dir'][$mod].'/'.$session_id);
+		    mkdir($config['dir']['absolut'].'/'.$config['dir'][$mod].'/'.$session_id);
 	    }
 	    //$dataFolderJson = array();
 	    $dataJson = array();
@@ -530,12 +530,13 @@ function imapGetData($mod, $session_id, $server, $port, $user, $password, $secur
 		    // Connexion sur le dossier
 		    toLog(5, "Connexion sur le dossier ".$folder);
 		    $serverImapOpenString = serverImapOpenString($server, $port, $secure, $auth, $cert, $folder, $format);
+		    sleep(2);
 		    imap_reopen($mailbox, $serverImapOpenString, null, 0);
 		    $info = imap_check($mailbox);
 		    // Vérification de l'existance du dossier
 		    if (FALSE !== $info) {
 		    	if ($mod != 'preview') {
-			    	mkdir($config['dir'][$mod].'/'.$session_id.'/'.folderCleanName($folder));
+			    	mkdir($config['dir']['absolut'].'/'.$config['dir'][$mod].'/'.$session_id.'/'.folderCleanName($folder));
 			    }
 			    // Avant
 			    $dateBeforeForImap = date ( "d-M-Y", $dateBefore);
@@ -556,24 +557,33 @@ function imapGetData($mod, $session_id, $server, $port, $user, $password, $secur
 				    if ($mod != 'preview') {
 						// EML format message : 
 						$messageEML = imap_fetchbody($mailbox,$mail, '');
-						// Parse email
-						$parser->setText($messageEML); 
-						// archive
-						//createArchive($session_id,$mailbox,$mail);
-						// export
-						if ($header->Deleted != 'D') {
-							//~ if ($mod != 'preview') {
-								//~ array_push($dataJson, jsonMessage($mod, $parser, $header, $messageEML, $folder, $format));
-							//~ } else {
-							
-							// Bug des messages sans id, on en génère un 
-							if (empty($header->message_id)) {
-								$idClean=rand(1000, mt_getrandmax()).rand(1000, mt_getrandmax()).rand(1000, mt_getrandmax());
-							} else {
-								$idClean=cleanTxt(substr(substr($header->message_id, 0, -1), 1));
+						// Evite bug "You must not call MimeMailParser::setText with an empty string parameter..." du parser juste après
+						if ($messageEML != '') { 
+							// Parse email
+							$parser->setText($messageEML); 
+							// archive
+							//createArchive($session_id,$mailbox,$mail);
+							// export
+							if ($header->Deleted != 'D') {
+								//~ if ($mod != 'preview') {
+									//~ array_push($dataJson, jsonMessage($mod, $parser, $header, $messageEML, $folder, $format));
+								//~ } else {
+								
+								// Bug des messages sans id, on en génère un 
+								if (empty($header->message_id)) {
+									$idClean=rand(1000, mt_getrandmax()).rand(1000, mt_getrandmax()).rand(1000, mt_getrandmax());
+								} else {
+									$idClean=cleanTxt(substr(substr($header->message_id, 0, -1), 1));
+								}
+								array_push($dataJson, jsonMessage($mod, $idClean, $parser, $header, $messageEML, $folder, $format));
+								saveMessage($session_id, $idClean, $parser, $header, $messageEML, $folder, $format, $mod);			
 							}
-							array_push($dataJson, jsonMessage($mod, $idClean, $parser, $header, $messageEML, $folder, $format));
-							saveMessage($session_id, $idClean, $parser, $header, $messageEML, $folder, $format, $mod);			
+						} else {
+							var_dump($messageEML);
+							var_dump($header);
+							toLog(1, "Un message ignoré (".$session_id.")");
+							$return['result'] = false;
+							$return['resultMsg'] = '(probablement) Perte de connexion IMAP';
 						}
 				    }
 			    }
@@ -590,8 +600,8 @@ function imapGetData($mod, $session_id, $server, $port, $user, $password, $secur
 		    if ($mod != 'preview') {
 		    	toLog(4, "Enregistrement json/js messages");
 		    	if (count($dataJson) > 0) {
-					file_put_contents($config['dir'][$mod].'/'.$session_id.'/messages.json', json_encode($dataJson, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_IGNORE));
-					file_put_contents($config['dir'][$mod].'/'.$session_id.'/messages.js', 'var messages_json = '.json_encode($dataJson, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_IGNORE).';');
+					file_put_contents($config['dir']['absolut'].'/'.$config['dir'][$mod].'/'.$session_id.'/messages.json', json_encode($dataJson, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_IGNORE));
+					file_put_contents($config['dir']['absolut'].'/'.$config['dir'][$mod].'/'.$session_id.'/messages.js', 'var messages_json = '.json_encode($dataJson, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_IGNORE).';');
 					if (json_last_error() != 0) {
 						toLog(1, "Erreur dans le json : ".json_last_error());
 					}

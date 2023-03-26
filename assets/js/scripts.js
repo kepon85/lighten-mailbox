@@ -1,3 +1,53 @@
+/* Se RFC 2060 - no / ~ \ in folder names */
+function ureplacer(pmatch) {
+    var ret = ""
+    pmatch = pmatch.replace(/\,/g,'/')
+    var ix = pmatch.substr(1,pmatch.length-2)
+
+    if (ix.length % 4 != 0) 
+      ix = ix.padEnd(ix.length+ 4 - ix.length % 4,"=")
+    try {
+    var dx = atob(ix)
+    for (var j = 0; j < dx.length; j = j+2) {
+        ret = ret + String.fromCharCode((dx.charCodeAt(j) << 8) + dx.charCodeAt(j+1))
+    }
+    } catch(err) {
+    console.log("Error in decoding foldername IMAP UTF7, sending empty string back")
+    console.log(err)
+    ret = ""
+    }
+    return ret
+}
+
+function breplacer(umatch) {
+    var bst = ""
+    for (var i=0; i < umatch.length; i++) {
+      var f = umatch.charCodeAt(i)
+      bst = bst + String.fromCharCode(f >> 8) + String.fromCharCode(f & 255)
+    }
+
+    try {
+    bst = '&'+btoa(bst).replace(/\//g,',').replace(/=+/,'')+'-'
+    }catch(err) {
+    console.log("Error in encoding foldername IMAP UTF7, sending empty string back")
+    console.log(err)
+    bst = ""
+    }
+    return bst
+}
+
+function decode_imap_utf7(mstring) {
+    var stm = new RegExp(/(\&[A-Za-z0-9\+\,]+\-)/,'g')
+    return mstring.replace(stm,ureplacer).replace('&-','&')
+}
+
+function encode_imap_utf7(ustring) {
+    ustring = ustring.replace(/\/|\~|\\/g,'')
+    var vgm = new RegExp(/([^\x20-\x7e]+)/,'g')
+    return ustring.replace('&','&-').replace(vgm,breplacer)
+}
+
+
 function convertOctect2humain(value) {
 	if (value > 1000000000) {
 		returnVal=Math.round(value/1024/1024/1024, 1)+'Go';
@@ -113,9 +163,9 @@ function imapDetectConfig() {
 					}
 					$('#imapfolder').append('<ul>');
 					if (regexSelected.test(item)) {
-						$('#imapfolder').append('<li><input type="checkbox" name="f1-imapfolder[]" class="f1-imapfolder" value="'+item+'" checked="checked"> ' + item+'</li>');
+						$('#imapfolder').append('<li><input type="checkbox" name="f1-imapfolder[]" class="f1-imapfolder" value="'+item+'" checked="checked"> ' + decode_imap_utf7(item)+'</li>');
 					}else{
-						$('#imapfolder').append('<li><input type="checkbox" name="f1-imapfolder[]" class="f1-imapfolder" value="'+item+'"> ' + item +'</li>');
+						$('#imapfolder').append('<li><input type="checkbox" name="f1-imapfolder[]" class="f1-imapfolder" value="'+item+'"> ' + decode_imap_utf7(item) +'</li>');
 					}
 					$('#imapfolder').append('</ul>');
 				});
@@ -338,7 +388,7 @@ jQuery(document).ready(function() {
 						var tableBody = $("#folderPreviewList tbody"); 
 						for (let key in data['folder']){
 							if(data['folder'].hasOwnProperty(key)){
-								tableBody.append('<tr><td>'+key+'</td><td>'+data['folder'][key]['nb']+'</td><td>'+convertOctect2humain(data['folder'][key]['size'])+'</td></tr>'); 
+								tableBody.append('<tr><td>'+decode_imap_utf7(key)+'</td><td>'+data['folder'][key]['nb']+'</td><td>'+convertOctect2humain(data['folder'][key]['size'])+'</td></tr>'); 
 							}
 						}
 						tableBody.append('<tr><td>Total</td><td>&nbsp;</td><td>'+convertOctect2humain(data['totalSize'])+'</td><td></td></tr>'); 
