@@ -80,9 +80,9 @@ while (true) {
 					// copy($config['dir']['templateTab']['html'], $config['dir']['archive']."/".$spoolerNextArray['session_id']."/");
 					// toLog(5, $config['dir']['templateTab']['html'] . '-'.  $config['dir']['archive']."/".$spoolerNextArray['session_id']."/");
 					// Copy asset (lib)
-					recurse_copy($config['dir']['templateTab'], $config['dir']['archive']."/".$spoolerNextArray['session_id']);
+					recurse_copy($config['dir']['absolut'].'/'.$config['dir']['templateTab'], $config['dir']['absolut'].'/'.$config['dir']['archive']."/".$spoolerNextArray['session_id']);
 					// On zip
-					if (Zip($config['dir']['archive']."/".$spoolerNextArray['session_id']."/", $config['dir']['archive']."/".$fileNameGen)) {
+					if (Zip($config['dir']['absolut'].'/'.$config['dir']['archive']."/".$spoolerNextArray['session_id']."/", $config['dir']['absolut'].'/'.$config['dir']['archive']."/".$fileNameGen)) {
 						toLog(2, "Le ZIP est fait, on l'enregistre : ".$fileNameGen);
 						// Enregistrement de l'archive : 
 						$req = $db->prepare("INSERT INTO archive (session_id, file) VALUES (:session_id, :file)");
@@ -94,7 +94,7 @@ while (true) {
 						$req->bindParam('id', $spoolerNextArray['id'], PDO::PARAM_INT);
 						$req->execute();
 						// Ménage
-						rrmdir($config['dir']['archive']."/".$spoolerNextArray['session_id']."/");
+						rrmdir($config['dir']['absolut'].'/'.$config['dir']['archive']."/".$spoolerNextArray['session_id']."/");
 
 						// Notification archive prête
 					    $urlSpool=$config['baseUrl'].'spool_'.$spoolerNextArray['session_id'];
@@ -117,12 +117,24 @@ while (true) {
 						$req = $db->prepare("UPDATE spooler SET status = 0 WHERE id = :id");
 						$req->bindParam('id', $spoolerNextArray['id'], PDO::PARAM_INT);
 						$req->execute();
+						$mailSend_return = mailSend(username2email($spoolerNextArray['user'], $spoolerNextArray['domain']), _('Archive error'), _('Hello').'<br /></br>
+
+'._('Sorry but the archiving encountered too many errors for you to download.'));
+					    if ($mailSend_return != true) {
+					    	toLog(1, 'Erreur mailSend '.$mailSend_return);
+						}
 					}
 				} else {
-					toLog(2, "Erreur dans le spooler sur la session ".$spoolerNextArray['session_id']);
-					$req = $db->prepare("UPDATE spooler SET status = 0 WHERE session_id = :id");
+					toLog(2, "Erreur dans le spooler sur la session ".$spoolerNextArray['session_id'].' : '.$imapGetData_return['resultMsg']);
+					$req = $db->prepare("UPDATE spooler SET status = 0 WHERE id = :id");
 					$req->bindParam('id', $spoolerNextArray['id'], PDO::PARAM_INT);
 					$req->execute();
+					$mailSend_return = mailSend(username2email($spoolerNextArray['user'], $spoolerNextArray['domain']), _('Archive error'), _('Hello').'<br /></br>
+
+'._('Sorry but the archiving encountered too many errors for you to download.'));
+				    if ($mailSend_return != true) {
+				    	toLog(1, 'Erreur mailSend '.$mailSend_return);
+					}
 				}
 			} else if ($spoolerNextArray['task'] == 2) {
 				toLog(3, "Suppression demandé dans le spooler pour la session ".$spoolerNextArray['session_id']);
@@ -152,8 +164,8 @@ while (true) {
 		// Ménage dans els 
 		try {
 			$archive = $db->prepare("SELECT session_id, file 
-									FROM archive
-									WHERE dateCreate < '".date('Y-m-d', time()-$config['archive']['life'])."'");
+						    FROM archive
+						    WHERE dateCreate < '".date('Y-m-d', time()-$config['archive']['life']*86400)."'");
 			$archive->execute();
 		} catch ( PDOException $e ) {
 			toLog(1, "SELECT archive, error : ".$e->getMessage(), 0);
@@ -164,7 +176,7 @@ while (true) {
 		} else {
 			foreach($archiveArrayFetch as $archiveFetch) {
 				toLog(2, 'Suppression de l\'archives expiré : '.$archiveFetch['file']);
-				unlink($config['dir']['archive'].'/'.$archiveFetch['file']);
+				unlink($config['dir']['absolut'].'/'.$config['dir']['archive'].'/'.$archiveFetch['file']);
 				$req = $db->prepare("DELETE FROM archive WHERE session_id = :session_id");
 				$req->bindParam('session_id', $archiveFetch['session_id'], PDO::PARAM_INT);
 				$req->execute();

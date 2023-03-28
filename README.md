@@ -126,6 +126,7 @@ USER="web242"
 
 * Futur :
   * Orientation "serveur dédier" limiter a une liste de @domaine et ou un serveur
+  * Mode backup et non archive... en tout cas permettre la modification des texte de présentation... / incrustation dans le html...
   * BUG index.html si eml masque lien des archives !
   * MAX usage... par IP et/ou cookies... ? (pour éviter que le service ne soit détourné)
   * Estimer temps/durée  (avant validation)

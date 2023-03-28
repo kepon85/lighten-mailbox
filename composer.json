@@ -2,7 +2,8 @@
     "require": {
         "league/oauth2-client": "^2.4",
         "league/oauth2-google": "^3.0",
-        "pear/net_dns2": "^1.4",
-        "phpmailer/phpmailer": "^6.1"
+        "pear/net_dns2": "^1.5",
+        "phpmailer/phpmailer": "^6.8",
+        "php-mime-mail-parser/php-mime-mail-parser": "^7.1"
     }
 }

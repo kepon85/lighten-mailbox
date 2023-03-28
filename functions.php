@@ -14,6 +14,7 @@ function cleanTxt($char) {
 		);    
 }
 function folderCleanName($folderName) {
+	#$folderName = utf8_encode(imap_utf7_decode());
 	$folderName = preg_replace(
 			"(\[|\])", 
 			'', 
@@ -529,6 +530,7 @@ function imapGetData($mod, $session_id, $server, $port, $user, $password, $secur
 	    foreach($imapfolder as $folder) {
 		    // Connexion sur le dossier
 		    toLog(5, "Connexion sur le dossier ".$folder);
+		    toLog(5, "Connexion sur le dossier ".folderCleanName($folder));
 		    $serverImapOpenString = serverImapOpenString($server, $port, $secure, $auth, $cert, $folder, $format);
 		    sleep(2);
 		    imap_reopen($mailbox, $serverImapOpenString, null, 0);

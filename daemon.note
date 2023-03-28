@@ -1,0 +1,2 @@
+su - web242 -s /bin/bash -c "php /var/www/lighten-mailbox.zici.fr/web/daemon.php -d /var/www/lighten-mailbox.zici.fr/web"
+
